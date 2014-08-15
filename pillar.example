@@ -1,3 +1,31 @@
-template:
-  lookup:
-    master: template-master
+collectd:
+  FQDNLookup: true
+  plugin: true
+  plugins:
+    defaults: [battery, cpu, entropy, load, memory, swap, load, users]
+    syslog:
+      LogLevel: info
+    network:
+      host: 'logstash'
+      port: 25826
+    mysql:
+      host: 'localhost'
+      port: '3306'
+      user: 'myuser'
+      pass: 'mypass'
+      name: 'mydb'
+      MasterStats: 'false'
+    postgresql:
+      host: 'localhost'
+      port: '5432'
+      user: 'myuser'
+      pass: 'mypass'
+      name: 'mydb'
+    df:
+      Device:
+      MountPoint:
+      FSType: 'ext4'
+      IgnoreSelected: false
+      ReportByDevice:
+      ReportReserved:
+      ReportInodes:

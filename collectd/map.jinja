@@ -1,7 +1,8 @@
-{% set template = salt['grains.filter_by']({
-    'default': {
-        'pkg': 'template',
-        'service': 'template',
-        'config': '/etc/template.conf',
+{% set collectd = salt['grains.filter_by']({
+    'Debian': {
+        'pkg': 'collectd-core',
+        'service': 'collectd',
+        'config': '/etc/collectd/collectd.conf',
+        'plugindirconfig': '/etc/collectd/plugins',
     },
-}, merge=salt['pillar.get']('template:lookup')) %}
+}, merge=salt['pillar.get']('collectd:lookup')) %}
