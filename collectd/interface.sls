@@ -9,4 +9,4 @@
     - template: jinja
     - defaults:
         interfaces: {{ salt['pillar.get']('collectd:plugins:interface:interface', 'eth0') }}
-
+        IgnoreSelected: {{ salt['pillar.get']('collectd:plugins:interface:IgnoreSelected', 'false') }}
