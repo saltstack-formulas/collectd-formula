@@ -1,7 +1,18 @@
 {% from "collectd/map.jinja" import collectd with context %}
 
-# Link to proper java.so
-# /usr/lib/collectd/java.so
+collectd-java:
+    file.rename:
+        - name: {{ collectd.javalib }}
+        - source: {{ collectd.javalib }}.new
+        - force: False
+        - makedirs: False
+
+{{ collectd.javalib }}:
+    file.symlink:
+        - target: {{ salt['pillar.get']('collectd:plugins:java:lib') }}
+        - makedirs: False
+
+
 {{ collectd.plugdir }}/java.sls:
   file.managed:
     - source: salt://collectd/files/java.conf

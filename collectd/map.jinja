@@ -4,5 +4,6 @@
         'service': 'collectd',
         'config': '/etc/collectd/collectd.conf',
         'plugindirconfig': '/etc/collectd/plugins',
+        'javalib': '/usr/lib/collectd/java.so',
     },
 }, merge=salt['pillar.get']('collectd:lookup')) %}
