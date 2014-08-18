@@ -29,3 +29,12 @@ collectd:
       ReportByDevice:
       ReportReserved:
       ReportInodes:
+    ntpd:
+      host: localhost
+      port: 123
+      ReverseLookups: 'false'
+    java:
+      host: localhost
+      port: 17264
+      user: ''
+      pass: ''
