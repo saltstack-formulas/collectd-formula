@@ -27,6 +27,5 @@ collectd:
     - defaults:
         hostname: {{ salt['grains.get']('fqdn') }}
         FQDNLookup: {{ salt['pillar.get']('collectd:FQDNLookup', false) }}
-        plugin: {{ salt['pillar.get']('collectd:plugin', false) }}
         plugindirconfig: {{ collectd.plugindirconfig }}
-        defaults: {{ salt['pillar.get']('collectd:plugins:defaults') }}
+        default: {{ salt['pillar.get']('collectd:plugins:default') }}
