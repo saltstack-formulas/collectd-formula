@@ -1,12 +1,12 @@
 {% from "collectd/map.jinja" import collectd with context %}
 
-{{ collectd.plugindirconfig }}/ethstat.sls:
+{{ collectd.plugindirconfig }}/interface.sls:
   file.managed:
-    - source: salt://collectd/files/ethstat.conf
+    - source: salt://collectd/files/interface.conf
     - user: root
     - group: root
     - mode: 644
     - template: jinja
     - defaults:
-        interface: {{ salt['pillar.get']('collectd:plugins:ethstat:interface', 'eth0') }}
+        interface: {{ salt['pillar.get']('collectd:plugins:interface:interface', 'eth0') }}
 
