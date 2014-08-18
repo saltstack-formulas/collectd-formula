@@ -17,7 +17,7 @@ collectd:
     - file_mode: 644
     - makedirs: True
 
-{{ collectd.conf }}:
+{{ collectd.config }}:
   file.managed:
     - source: salt://collectd/files/collectd.conf
     - user: root
