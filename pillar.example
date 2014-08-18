@@ -40,3 +40,6 @@ collectd:
       pass: ''
     ethstat:
       interface: 'eth0'
+    interface:
+      interfaces: ['eth0', 'lo0']
+      IgnoreSelected: 'false'
