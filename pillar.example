@@ -38,3 +38,5 @@ collectd:
       port: 17264
       user: ''
       pass: ''
+    ethstat:
+      interface: 'eth0'
