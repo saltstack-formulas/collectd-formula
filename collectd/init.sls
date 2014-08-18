@@ -26,6 +26,7 @@ collectd:
     - template: jinja
     - defaults:
         hostname: {{ salt['grains.get']('fqdn') }}
-        FQDNLookup: {{ salt['pillar.get']('collectd:FQDNLookup', false) }}
-        plugindirconfig: {{ collectd.plugindirconfig }}
+        FQDNLookup: {{ salt['pillar.get']('collectd:FQDNLookup', 'false') }}
         default: {{ salt['pillar.get']('collectd:plugins:default') }}
+        plugindirconfig: {{ collectd.plugindirconfig }}
+        plugins: {{ salt['pillar.get']('collectd:plugins:enable', false) }}

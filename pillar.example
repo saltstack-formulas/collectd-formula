@@ -2,6 +2,7 @@ collectd:
   FQDNLookup: true
   plugins:
     default: [battery, cpu, entropy, load, memory, swap, load, users]
+    enable: false
     syslog:
       LogLevel: info
     network:
