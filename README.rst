@@ -1,9 +1,8 @@
 ================
-template-formula
+collectd-formula
 ================
 
-A saltstack formula that is empty. It has dummy content to help with a quick
-start on a new formula.
+A salt formula that installs and configures collectd. The system statistics collection daemon.
 
 .. note::
 
@@ -16,7 +15,58 @@ Available states
 .. contents::
     :local:
 
-``template``
+``collectd``
 ------------
 
-Installs the template package, and starts the associated template service.
+Installs the collectd package, and starts the associated collectd service.
+
+
+``collectd.apache``
+------------
+
+Enables and configures the apache plugin.
+
+``collectd.df``
+------------
+
+Enables and configures the df plugin.
+
+``collectd.ethstat``
+------------
+
+Enables and configures the ethstat plugin.
+
+``collectd.interface``
+------------
+
+Enables and configures the interface plugin.
+
+``collectd.java``
+------------
+
+Enables and configures the java plugin.
+
+``collectd.mysql``
+------------
+
+Enables and configures the mysql plugin. Needs refinement.
+
+``collectd.network``
+------------
+
+Enables and configures the network plugin.
+
+``collectd.ntpd``
+------------
+
+Enables and configures the ntpd plugin.
+
+``collectd.postgresql``
+------------
+
+Enables and configures the postgresql plugin. Needs refinement.
+
+``collectd.syslog``
+------------
+
+Enables and configures the syslog plugin.
