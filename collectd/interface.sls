@@ -8,5 +8,5 @@
     - mode: 644
     - template: jinja
     - defaults:
-        interface: {{ salt['pillar.get']('collectd:plugins:interface:interface', 'eth0') }}
+        interfaces: {{ salt['pillar.get']('collectd:plugins:interface:interface', 'eth0') }}
 
