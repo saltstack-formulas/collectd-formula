@@ -13,7 +13,7 @@ collectd-java:
         - makedirs: False
 
 
-{{ collectd.plugindirconfig }}/java.sls:
+{{ collectd.plugindirconfig }}/java.conf:
   file.managed:
     - source: salt://collectd/files/java.conf
     - user: root

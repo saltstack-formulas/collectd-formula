@@ -1,6 +1,6 @@
 {% from "collectd/map.jinja" import collectd with context %}
 
-{{ collectd.plugindirconfig }}/df.sls:
+{{ collectd.plugindirconfig }}/df.conf:
   file.managed:
     - source: salt://collectd/files/df.conf
     - user: root

@@ -1,6 +1,6 @@
 {% from "collectd/map.jinja" import collectd with context %}
 
-{{ collectd.plugindirconfig }}/mysql.sls:
+{{ collectd.plugindirconfig }}/mysql.conf:
   file.managed:
     - source: salt://collectd/files/mysql.conf
     - user: root
