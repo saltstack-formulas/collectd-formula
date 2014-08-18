@@ -1,6 +1,6 @@
 {% from "collectd/map.jinja" import collectd with context %}
 
-{{ collectd.plugindirconfig }}/apache.sls:
+{{ collectd.plugindirconfig }}/apache.conf:
   file.managed:
     - source: salt://collectd/files/apache.conf
     - user: root

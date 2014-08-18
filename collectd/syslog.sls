@@ -1,6 +1,6 @@
 {% from "collectd/map.jinja" import collectd with context %}
 
-{{ collectd.plugindirconfig }}/syslog.sls:
+{{ collectd.plugindirconfig }}/syslog.conf:
   file.managed:
     - source: salt://collectd/files/syslog.conf
     - user: root

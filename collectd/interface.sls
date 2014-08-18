@@ -1,6 +1,6 @@
 {% from "collectd/map.jinja" import collectd with context %}
 
-{{ collectd.plugindirconfig }}/interface.sls:
+{{ collectd.plugindirconfig }}/interface.conf:
   file.managed:
     - source: salt://collectd/files/interface.conf
     - user: root
