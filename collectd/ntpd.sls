@@ -1,6 +1,6 @@
 {% from "collectd/map.jinja" import collectd with context %}
 
-{{ collectd.plugdir }}/ntpd.sls:
+{{ collectd.plugindirconfig }}/ntpd.sls:
   file.managed:
     - source: salt://collectd/files/ntpd.conf
     - user: root

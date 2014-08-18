@@ -1,6 +1,6 @@
 {% from "collectd/map.jinja" import collectd with context %}
 
-{{ collectd.plugdir }}/postgresql.sls:
+{{ collectd.plugindirconfig }}/postgresql.sls:
   file.managed:
     - source: salt://collectd/files/postgresql.conf
     - user: root

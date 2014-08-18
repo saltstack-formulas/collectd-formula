@@ -1,6 +1,6 @@
 {% from "collectd/map.jinja" import collectd with context %}
 
-{{ collectd.plugdir }}/network.sls:
+{{ collectd.plugindirconfig }}/network.sls:
   file.managed:
     - source: salt://collectd/files/network.conf
     - user: root

@@ -1,6 +1,6 @@
 {% from "collectd/map.jinja" import collectd with context %}
 
-{{ collectd.plugdir }}/ethstat.sls:
+{{ collectd.plugindirconfig }}/ethstat.sls:
   file.managed:
     - source: salt://collectd/files/ethstat.conf
     - user: root
