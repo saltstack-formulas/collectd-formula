@@ -1,6 +1,10 @@
 template formula
 ================
 
+0.0.6 (2014-08-18)
+
+- Created collectd formula
+
 0.0.5 (2014-07-28)
 
 - Fixed broken link to Salt Formula documentation
