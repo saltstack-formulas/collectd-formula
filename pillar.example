@@ -45,3 +45,5 @@ collectd:
     interface:
       interfaces: ['eth0', 'lo0']
       IgnoreSelected: 'false'
+    disk:
+      matches: ['/^[hs]d[a-f][0-9]?$/']

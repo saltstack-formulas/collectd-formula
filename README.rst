@@ -31,6 +31,11 @@ Enables and configures the apache plugin.
 
 Enables and configures the df plugin.
 
+``collectd.disk``
+------------
+
+Enables and configures the disk plugin.
+
 ``collectd.ethstat``
 ------------
 
