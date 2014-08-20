@@ -20,6 +20,10 @@ Available states
 
 Installs the collectd package, and starts the associated collectd service.
 
+``collectd.service``
+------------
+
+Metastate used to include service into respective plugin states, included in ``collectd`` state.
 
 ``collectd.apache``
 ------------

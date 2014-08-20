@@ -1,13 +1,12 @@
 {% from "collectd/map.jinja" import collectd with context %}
 
+include:
+  - collectd.service
+
 collectd:
   pkg:
     - installed
     - name: {{ collectd.pkg }}
-  service:
-    - running
-    - name: {{ collectd.service }}
-    - enable: True
 
 {{ collectd.plugindirconfig }}:
   file.directory:
