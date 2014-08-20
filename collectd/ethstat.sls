@@ -8,5 +8,5 @@
     - mode: 644
     - template: jinja
     - defaults:
-        host: {{ salt['pillar.get']('collectd:plugins:ethstat:interface', 'eth0') }}
+        interface: {{ salt['pillar.get']('collectd:plugins:ethstat:interface', 'eth0') }}
 
