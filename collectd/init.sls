@@ -15,6 +15,8 @@ collectd:
     - dir_mode: 755
     - file_mode: 644
     - makedirs: True
+    - require_in:
+      - service: collectd-service # set proper file mode before service runs
 
 {{ collectd.config }}:
   file.managed:
