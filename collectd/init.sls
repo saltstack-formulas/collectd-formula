@@ -1,13 +1,12 @@
 {% from "collectd/map.jinja" import collectd with context %}
 
+include:
+  - collectd.service
+
 collectd:
   pkg:
     - installed
     - name: {{ collectd.pkg }}
-  service:
-    - running
-    - name: {{ collectd.service }}
-    - enable: True
 
 {{ collectd.plugindirconfig }}:
   file.directory:
@@ -16,6 +15,8 @@ collectd:
     - dir_mode: 755
     - file_mode: 644
     - makedirs: True
+    - require_in:
+      - service: collectd-service # set proper file mode before service runs
 
 {{ collectd.config }}:
   file.managed:
@@ -24,6 +25,8 @@ collectd:
     - group: root
     - mode: 644
     - template: jinja
+    - watch_in:
+      - service: collectd-service
     - defaults:
         hostname: {{ salt['grains.get']('fqdn') }}
         FQDNLookup: {{ salt['pillar.get']('collectd:FQDNLookup', 'false') }}

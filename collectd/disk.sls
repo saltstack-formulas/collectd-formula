@@ -3,9 +3,9 @@
 include:
   - collectd.service
 
-{{ collectd.plugindirconfig }}/network.conf:
+{{ collectd.plugindirconfig }}/disk.conf:
   file.managed:
-    - source: salt://collectd/files/network.conf
+    - source: salt://collectd/files/disk.conf
     - user: root
     - group: root
     - mode: 644
@@ -13,5 +13,4 @@ include:
     - watch_in:
       - service: collectd-service
     - defaults:
-        host: {{ salt['pillar.get']('collectd:plugins:network:host') }}
-        port: {{ salt['pillar.get']('collectd:plugins:network:port') }}
+        matches: {{ salt['pillar.get']('collectd:plugins:disk:matches', []) }}
