@@ -43,7 +43,7 @@ Enables and configures the disk plugin.
 ``collectd.ethstat``
 ------------
 
-Enables and configures the ethstat plugin (please note `there is a possible bug in the debian package <https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=698584>`).
+Enables and configures the ethstat plugin (please note `there is a possible bug in the debian package <https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=698584>`_).
 
 ``collectd.interface``
 ------------
@@ -79,3 +79,40 @@ Enables and configures the postgresql plugin. Needs refinement.
 ------------
 
 Enables and configures the syslog plugin.
+
+Usage
+================
+
+Custom state file
+-----------------
+
+Create a custom state file (for example ``collectd-custom.sls``) that includes the plugins you want and the base state. ::
+
+    include:
+      - collectd
+      - collectd.disk
+      - collectd.syslog
+
+Then in your topfile: ::
+
+    'servername':
+      - collectd-custom
+
+Directly in topfile
+-------------------
+
+Or if you don't mind having long lists in your topfile, just add whatever plugins you want and the base state. ::
+
+    'servername':
+      - collectd
+      - collectd.disk
+      - collectd.syslog
+
+Combined
+--------
+
+Or you can combine both - default plugins in custom state and specific in topfile. ::
+
+    'apache-server':
+      - collectd-custom
+      - collectd.apache
