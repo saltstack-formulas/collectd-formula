@@ -1,5 +1,8 @@
 {% from "collectd/map.jinja" import collectd with context %}
 
+include:
+  - collectd.service
+
 collectd-java:
     file.rename:
         - name: {{ collectd.javalib }}
@@ -20,6 +23,8 @@ collectd-java:
     - group: root
     - mode: 644
     - template: jinja
+    - watch_in:
+      - service: collectd-service
     - defaults:
         host: {{ salt['pillar.get']('collectd:plugins:java:host', 'localhost') }}
         port: {{ salt['pillar.get']('collectd:plugins:java:port', '17264') }}

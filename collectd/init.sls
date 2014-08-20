@@ -23,6 +23,8 @@ collectd:
     - group: root
     - mode: 644
     - template: jinja
+    - watch_in:
+      - service: collectd-service
     - defaults:
         hostname: {{ salt['grains.get']('fqdn') }}
         FQDNLookup: {{ salt['pillar.get']('collectd:FQDNLookup', 'false') }}

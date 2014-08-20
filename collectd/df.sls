@@ -1,5 +1,8 @@
 {% from "collectd/map.jinja" import collectd with context %}
 
+include:
+  - collectd.service
+
 {{ collectd.plugindirconfig }}/df.conf:
   file.managed:
     - source: salt://collectd/files/df.conf
@@ -7,6 +10,8 @@
     - group: root
     - mode: 644
     - template: jinja
+    - watch_in:
+      - service: collectd-service
     - defaults:
         Device: {{ salt['pillar.get']('collectd:plugins:df:Device') }}
         MountPoint: {{ salt['pillar.get']('collectd:plugins:df:MountPoint') }}

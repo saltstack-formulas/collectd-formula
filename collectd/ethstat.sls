@@ -1,5 +1,8 @@
 {% from "collectd/map.jinja" import collectd with context %}
 
+include:
+  - collectd.service
+
 {{ collectd.plugindirconfig }}/ethstat.conf:
   file.managed:
     - source: salt://collectd/files/ethstat.conf
@@ -7,6 +10,8 @@
     - group: root
     - mode: 644
     - template: jinja
+    - watch_in:
+      - service: collectd-service
     - defaults:
         interface: {{ salt['pillar.get']('collectd:plugins:ethstat:interface', 'eth0') }}
 
