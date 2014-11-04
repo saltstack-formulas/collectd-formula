@@ -1,7 +1,7 @@
 {% from "collectd/map.jinja" import collectd with context %}
 
 include:
-  - collectd.service
+  - collectd
 
 {{ collectd.plugindirconfig }}/interface.conf:
   file.managed:
