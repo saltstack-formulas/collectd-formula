@@ -3,6 +3,9 @@
 include:
   - collectd.service
 
+liboping0:
+  pkg.installed
+
 {{ collectd.plugindirconfig }}/ping.conf:
   file.managed:
     - source: salt://collectd/files/ping.conf
