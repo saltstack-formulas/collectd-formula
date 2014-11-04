@@ -45,5 +45,14 @@ collectd:
     interface:
       interfaces: ['eth0', 'lo0']
       IgnoreSelected: 'false'
+    # defaults as of 20141103
+    ping:
+      hosts: ['google.com', 'yahoo.com']
+      #interval: 1.0
+      #timeout: 0.9
+      #ttl: 64
+      #sourceaddress: 10.0.1.1
+      #device: eth0
+      #maxmissed: -1
     disk:
       matches: ['/^[hs]d[a-f][0-9]?$/']
