@@ -13,5 +13,5 @@ include:
     - watch_in:
       - service: collectd-service
     - defaults:
-        interfaces: {{ salt['pillar.get']('collectd:plugins:interface:interface', 'eth0') }}
+        interfaces: {{ salt['pillar.get']('collectd:plugins:interface:interfaces', ['eth0']) }}
         IgnoreSelected: {{ salt['pillar.get']('collectd:plugins:interface:IgnoreSelected', 'false') }}

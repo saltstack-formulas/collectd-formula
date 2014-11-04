@@ -20,3 +20,5 @@ include:
         ReportByDevice: {{ salt['pillar.get']('collectd:plugins:df:ReportByDevice', 'false') }}
         ReportReserved: {{ salt['pillar.get']('collectd:plugins:df:ReportReserved', 'false') }}
         ReportInodes: {{ salt['pillar.get']('collectd:plugins:df:ReportInodes', 'false') }}
+        ValuesAbsolute: {{ salt['pillar.get']('collectd:plugins:df:ValuesAbsolute', 'true') }}
+        ValuesPercentage: {{ salt['pillar.get']('collectd:plugins:df:ValuesPercentage', 'false') }}
