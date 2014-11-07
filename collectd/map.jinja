@@ -1,6 +1,6 @@
 {% set collectd = salt['grains.filter_by']({
     'Debian': {
-        'pkg': 'collectd-core',
+        'pkg': 'collectd',
         'service': 'collectd',
         'config': '/etc/collectd/collectd.conf',
         'plugindirconfig': '/etc/collectd/plugins',
