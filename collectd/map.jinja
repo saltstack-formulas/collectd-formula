@@ -6,4 +6,10 @@
         'plugindirconfig': '/etc/collectd/plugins',
         'javalib': '/usr/lib/collectd/java.so',
     },
+    'RedHat': {
+        'pkg': 'collectd',
+        'service': 'collectd',
+        'config': '/etc/collectd.conf',
+        'plugindirconfig': '/etc/collectd.d',
+    },
 }, merge=salt['pillar.get']('collectd:lookup')) %}
