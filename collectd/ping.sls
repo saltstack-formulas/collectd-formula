@@ -13,6 +13,8 @@ liboping0:
     - group: root
     - mode: 644
     - template: jinja
+    - require:
+      - pkg: liboping0
     - watch_in:
       - service: collectd-service
     - defaults:
