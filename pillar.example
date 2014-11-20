@@ -67,3 +67,10 @@ collectd:
       separateinstances: true
       storerates: true
       alwaysappendds: false
+    write_riemann:
+      host: "riemann-host"
+      port: "5555"
+      protocol: TCP
+      storerates: "true"
+      alwaysappendds: "false"
+      tag: "sometag"
