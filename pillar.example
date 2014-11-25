@@ -67,3 +67,7 @@ collectd:
       separateinstances: true
       storerates: true
       alwaysappendds: false
+    statsd:
+      host: localhost
+      port: 8125
+      
