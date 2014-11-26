@@ -67,7 +67,9 @@ collectd:
       separateinstances: true
       storerates: true
       alwaysappendds: false
+    processes:
+      - java
+      - python
     statsd:
       host: localhost
       port: 8125
-      
