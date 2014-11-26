@@ -70,3 +70,6 @@ collectd:
     processes:
       - java
       - python
+    statsd:
+      host: localhost
+      port: 8125
