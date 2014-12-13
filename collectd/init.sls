@@ -4,8 +4,7 @@ include:
   - collectd.service
 
 collectd:
-  pkg:
-    - installed
+  pkg.installed:
     - name: {{ collectd.pkg }}
 
 {{ collectd.plugindirconfig }}:
