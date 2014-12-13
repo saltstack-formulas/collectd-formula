@@ -1,8 +1,7 @@
 {% from "collectd/map.jinja" import collectd with context %}
 
 collectd-service:
-  service:
-    - running
+  service.running:
     - name: {{ collectd.service }}
     - enable: True
     - require:
