@@ -16,4 +16,6 @@ include:
         host: {{ salt['pillar.get']('collectd:plugins:ntpd:host', 'localhost') }}
         port: {{ salt['pillar.get']('collectd:plugins:ntpd:port', '123') }}
         user: {{ salt['pillar.get']('collectd:plugins:ntpd:ReverseLookups', 'false') }}
+    - context:
+        ReverseLookups: {{ salt['pillar.get']('collectd:plugins:ntpd:ReverseLookups', 'false') }}
 
