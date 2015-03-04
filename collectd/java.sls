@@ -1,22 +1,22 @@
-{% from "collectd/map.jinja" import collectd with context %}
+{% from "collectd/map.jinja" import collectd_settings with context %}
 
 include:
   - collectd
 
 collectd-java:
     file.rename:
-        - name: {{ collectd.javalib }}
-        - source: {{ collectd.javalib }}.new
+        - name: {{ collectd_settings.javalib }}
+        - source: {{ collectd_settings.javalib }}.new
         - force: False
         - makedirs: False
 
-{{ collectd.javalib }}:
+{{ collectd_settings.javalib }}:
     file.symlink:
-        - target: {{ salt['pillar.get']('collectd:plugins:java:lib') }}
+        - target: {{ collectd_settings.plugins.java.lib }}
         - makedirs: False
 
 
-{{ collectd.plugindirconfig }}/java.conf:
+{{ collectd_settings.plugindirconfig }}/java.conf:
   file.managed:
     - source: salt://collectd/files/java.conf
     - user: root
@@ -25,9 +25,3 @@ collectd-java:
     - template: jinja
     - watch_in:
       - service: collectd-service
-    - defaults:
-        host: {{ salt['pillar.get']('collectd:plugins:java:host', 'localhost') }}
-        port: {{ salt['pillar.get']('collectd:plugins:java:port', '17264') }}
-        user: {{ salt['pillar.get']('collectd:plugins:java:user', '') }}
-        pass: {{ salt['pillar.get']('collectd:plugins:java:pass', '') }}
-

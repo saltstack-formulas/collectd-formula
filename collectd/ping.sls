@@ -1,4 +1,4 @@
-{% from "collectd/map.jinja" import collectd with context %}
+{% from "collectd/map.jinja" import collectd_settings with context %}
 
 include:
   - collectd
@@ -6,7 +6,7 @@ include:
 liboping0:
   pkg.installed
 
-{{ collectd.plugindirconfig }}/ping.conf:
+{{ collectd_settings.plugindirconfig }}/ping.conf:
   file.managed:
     - source: salt://collectd/files/ping.conf
     - user: root
@@ -17,12 +17,3 @@ liboping0:
       - pkg: liboping0
     - watch_in:
       - service: collectd-service
-    - defaults:
-        hosts: {{ salt['pillar.get']('collectd:plugins:ping:hosts', ['google.com', 'yahoo.com']) }}
-        hfg: {{ salt['pillar.get']('collectd:plugins:ping:hosts_from_grains') }}
-        interval: {{ salt['pillar.get']('collectd:plugins:ping:interval') }}
-        timeout: {{ salt['pillar.get']('collectd:plugins:ping:timeout') }}
-        ttl: {{ salt['pillar.get']('collectd:plugins:ping:ttl') }}
-        sourceaddress: {{ salt['pillar.get']('collectd:plugins:ping:sourceaddress') }}
-        device: {{ salt['pillar.get']('collectd:plugins:ping:device') }}
-        maxmissed: {{ salt['pillar.get']('collectd:plugins:ping:maxmissed') }}
