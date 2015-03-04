@@ -30,6 +30,6 @@ collectd:
         hostname: {{ salt['grains.get']('fqdn') }}
         FQDNLookup: {{ salt['pillar.get']('collectd:FQDNLookup', 'false') }}
         types: {{ salt['pillar.get']('collectd:TypesDB', ['/usr/share/collectd/types.db']) }}
-        default: {{ salt['pillar.get']('collectd:plugins:default') }}
+        default: {{ salt['pillar.get']('collectd:plugins:default', ['battery', 'cpu', 'entropy', 'load', 'memory', 'swap', 'users']) }}
         plugindirconfig: {{ collectd.plugindirconfig }}
         plugins: {{ salt['pillar.get']('collectd:plugins:enable', false) }}
