@@ -5,23 +5,30 @@ collectd:
     default: [battery, cpu, entropy, load, memory, swap, users]
     enable: false
     syslog:
-      LogLevel: info
+      loglevel: info
     network:
       host: 'logstash'
       port: 25826
     mysql:
-      host: 'localhost'
-      port: '3306'
-      user: 'myuser'
-      pass: 'mypass'
-      name: 'mydb'
-      MasterStats: 'false'
+      databases:
+        - host: 'foo'
+          port: '3306'
+          user: 'myuser'
+          pass: 'mypass'
+          name: 'mydb'
+          masterstats: true
+        - host: 'foo'
+          name: 'mydb'
+          socket: '/var/run/mysql/mysqld.sock'
+          slavestats: true
+          slavenotifications: true
     postgresql:
-      host: 'localhost'
-      port: '5432'
-      user: 'myuser'
-      pass: 'mypass'
-      name: 'mydb'
+      databases:
+        - host: 'localhost'
+          port: '5432'
+          user: 'myuser'
+          pass: 'mypass'
+          name: 'mydb'
     df:
       Device:
       MountPoint:

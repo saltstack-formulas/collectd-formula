@@ -1,15 +1,98 @@
-{% set collectd = salt['grains.filter_by']({
+{% set os_map = salt['grains.filter_by']({
     'Debian': {
-        'pkg': 'collectd-core',
-        'service': 'collectd',
         'config': '/etc/collectd/collectd.conf',
-        'plugindirconfig': '/etc/collectd/plugins',
         'javalib': '/usr/lib/collectd/java.so',
+        'pkg': 'collectd-core',
+        'plugindirconfig': '/etc/collectd/plugins',
+        'service': 'collectd',
+        'TypesDB': ['/usr/share/collectd/types.db'],
     },
     'RedHat': {
-        'pkg': 'collectd',
-        'service': 'collectd',
         'config': '/etc/collectd.conf',
+        'pkg': 'collectd',
         'plugindirconfig': '/etc/collectd.d',
+        'service': 'collectd',
+        'TypesDB': ['/usr/share/collectd/types.db'],
     },
 }, merge=salt['pillar.get']('collectd:lookup')) %}
+
+{# Settings dictionary with default values #}
+{% set default_settings = {
+    'collectd': {
+        'default_plugins': [
+            'battery',
+            'cpu',
+            'entropy',
+            'load',
+            'memory',
+            'swap',
+            'users'
+        ],
+        'FQDNLookup': 'false',
+        'plugins': {
+            'apache': {
+                'host': salt['grains.get']('host')
+            },
+            'df': {
+                'IgnoreSelected': 'false',
+                'ReportByDevice': 'false',
+                'ReportReserved': 'false',
+                'ReportInodes': 'false'
+            },
+            'disk': {
+                'matches': []
+            },
+            'enable': false,
+            'ethstat': {
+                'interface': 'eth0'
+            },
+            'interface': {
+                'interface': 'eth0',
+                'IgnoreSelected': 'false'
+            },
+            'java': {
+                'host': 'localhost',
+                'port': '17264',
+            },
+            'mysql': {
+                'databases': []
+            },
+            'network': {},
+            'nginx': {
+                'url': 'http://localhost/check_status',
+            },
+            'ntpd': {
+                'host': 'localhost',
+                'port': '123',
+                'ReverseLookups': 'false'
+            },
+            'ping': {
+                'hosts': ['google.com', 'yahoo.com'],
+                'hosts_from_grains': {},
+            },
+            'postgresql': {
+                'databases': []
+            },
+            'processes': {
+                'Processes': [],
+                'ProcessMatches': []
+            },
+            'statsd': {
+                'host': '"::"',
+                'port': 8125
+            },
+            'syslog': {
+                'loglevel': 'info'
+            },
+            'write_graphite': {
+                'node': salt['grains.get']('fqdn')
+            }
+        }
+    }
+} %}
+
+{# Merge os_map into settings dictionary #}
+{% do default_settings.collectd.update(os_map) %}
+
+{# Update settings defaults from pillar data #}
+{% set collectd_settings = salt['pillar.get']('collectd', default=default_settings.collectd, merge=True) %}

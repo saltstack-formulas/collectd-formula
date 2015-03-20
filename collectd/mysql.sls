@@ -1,9 +1,9 @@
-{% from "collectd/map.jinja" import collectd with context %}
+{% from "collectd/map.jinja" import collectd_settings with context %}
 
 include:
   - collectd
 
-{{ collectd.plugindirconfig }}/mysql.conf:
+{{ collectd_settings.plugindirconfig }}/mysql.conf:
   file.managed:
     - source: salt://collectd/files/mysql.conf
     - user: root
@@ -12,10 +12,3 @@ include:
     - template: jinja
     - watch_in:
       - service: collectd-service
-    - defaults:
-        host: {{ salt['pillar.get']('collectd:plugins:mysql:host') }}
-        port: {{ salt['pillar.get']('collectd:plugins:mysql:port') }}
-        user: {{ salt['pillar.get']('collectd:plugins:mysql:user') }}
-        pass: {{ salt['pillar.get']('collectd:plugins:mysql:pass') }}
-        name: {{ salt['pillar.get']('collectd:plugins:mysql:name') }}
-        MasterStats: {{ salt['pillar.get']('collectd:plugins:mysql:MasterStats') }}

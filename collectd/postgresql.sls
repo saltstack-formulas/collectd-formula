@@ -1,9 +1,10 @@
-{% from "collectd/map.jinja" import collectd with context %}
+{%- from "collectd/map.jinja" import collectd_settings with context %}
+{%- set postgresql_settings = collectd_settings.get('plugins:postgresql') %}
 
 include:
   - collectd
 
-{{ collectd.plugindirconfig }}/postgresql.conf:
+{{ collectd_settings.plugindirconfig }}/postgresql.conf:
   file.managed:
     - source: salt://collectd/files/postgresql.conf
     - user: root
@@ -12,11 +13,3 @@ include:
     - template: jinja
     - watch_in:
       - service: collectd-service
-    - defaults:
-        databases:
-            - host: {{ salt['pillar.get']('collectd:plugins:postgresql:host') }}
-              port: {{ salt['pillar.get']('collectd:plugins:postgresql:port') }}
-              user: {{ salt['pillar.get']('collectd:plugins:postgresql:user') }}
-              pass: {{ salt['pillar.get']('collectd:plugins:postgresql:pass') }}
-              name: {{ salt['pillar.get']('collectd:plugins:postgresql:name') }}
-        # MasterStats: {{ salt['pillar.get']('collectd:plugins:postgresql:MasterStats') }}

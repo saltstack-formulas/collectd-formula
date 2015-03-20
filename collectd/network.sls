@@ -1,9 +1,9 @@
-{% from "collectd/map.jinja" import collectd with context %}
+{% from "collectd/map.jinja" import collectd_settings with context %}
 
 include:
   - collectd
 
-{{ collectd.plugindirconfig }}/network.conf:
+{{ collectd_settings.plugindirconfig }}/network.conf:
   file.managed:
     - source: salt://collectd/files/network.conf
     - user: root
@@ -12,6 +12,3 @@ include:
     - template: jinja
     - watch_in:
       - service: collectd-service
-    - defaults:
-        host: {{ salt['pillar.get']('collectd:plugins:network:host') }}
-        port: {{ salt['pillar.get']('collectd:plugins:network:port') }}

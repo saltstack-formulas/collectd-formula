@@ -1,8 +1,8 @@
-{% from "collectd/map.jinja" import collectd with context %}
+{% from "collectd/map.jinja" import collectd_settings with context %}
 
 collectd-service:
   service.running:
-    - name: {{ collectd.service }}
+    - name: {{ collectd_settings.service }}
     - enable: True
     - require:
-      - pkg: {{ collectd.pkg }}
+      - pkg: {{ collectd_settings.pkg }}

@@ -1,9 +1,9 @@
-{% from "collectd/map.jinja" import collectd with context %}
+{% from "collectd/map.jinja" import collectd_settings with context %}
 
 include:
   - collectd
 
-{{ collectd.plugindirconfig }}/disk.conf:
+{{ collectd_settings.plugindirconfig }}/disk.conf:
   file.managed:
     - source: salt://collectd/files/disk.conf
     - user: root
@@ -12,5 +12,3 @@ include:
     - template: jinja
     - watch_in:
       - service: collectd-service
-    - defaults:
-        matches: {{ salt['pillar.get']('collectd:plugins:disk:matches', []) }}

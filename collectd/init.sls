@@ -1,13 +1,13 @@
-{% from "collectd/map.jinja" import collectd with context %}
+{% from "collectd/map.jinja" import collectd_settings with context %}
 
 include:
   - collectd.service
 
 collectd:
   pkg.installed:
-    - name: {{ collectd.pkg }}
+    - name: {{ collectd_settings.pkg }}
 
-{{ collectd.plugindirconfig }}:
+{{ collectd_settings.plugindirconfig }}:
   file.directory:
     - user: root
     - group: root
@@ -17,7 +17,7 @@ collectd:
     - require_in:
       - service: collectd-service # set proper file mode before service runs
 
-{{ collectd.config }}:
+{{ collectd_settings.config }}:
   file.managed:
     - source: salt://collectd/files/collectd.conf
     - user: root
@@ -26,10 +26,3 @@ collectd:
     - template: jinja
     - watch_in:
       - service: collectd-service
-    - defaults:
-        hostname: {{ salt['grains.get']('fqdn') }}
-        FQDNLookup: {{ salt['pillar.get']('collectd:FQDNLookup', 'false') }}
-        types: {{ salt['pillar.get']('collectd:TypesDB', ['/usr/share/collectd/types.db']) }}
-        default: {{ salt['pillar.get']('collectd:plugins:default', ['battery', 'cpu', 'entropy', 'load', 'memory', 'swap', 'users']) }}
-        plugindirconfig: {{ collectd.plugindirconfig }}
-        plugins: {{ salt['pillar.get']('collectd:plugins:enable', false) }}
