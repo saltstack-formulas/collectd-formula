@@ -85,7 +85,11 @@
                 'loglevel': 'info'
             },
             'write_graphite': {
-                'node': salt['grains.get']('fqdn')
+                'nodes': {
+                    'local': {
+                        'host': salt['grains.get']('fqdn')
+                    }
+                }
             }
         }
     }
