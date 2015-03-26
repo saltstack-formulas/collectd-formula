@@ -80,6 +80,11 @@ Enables and configures the postgresql plugin. Needs refinement.
 
 Enables and configures the syslog plugin.
 
+``collectd.write_graphite``
+------------
+
+Enables and configures the write_graphite plugin.
+
 Usage
 ================
 

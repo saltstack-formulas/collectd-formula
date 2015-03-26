@@ -14,78 +14,192 @@
         'service': 'collectd',
         'TypesDB': ['/usr/share/collectd/types.db'],
     },
-}, merge=salt['pillar.get']('collectd:lookup')) %}
+}, merge=salt['grains.filter_by']({
+    'Ubuntu': {
+        'plugindirconfig': '/etc/collectd/collectd.conf.d'
+    },
+}, grain='os', merge=salt['pillar.get']('collectd:lookup'))) %}
 
 {# Settings dictionary with default values #}
 {% set default_settings = {
     'collectd': {
         'FQDNLookup': 'false',
         'plugins': {
-            'default': [
-                'battery',
-                'cpu',
-                'entropy',
-                'load',
-                'memory',
-                'swap',
-                'users'
-            ],
             'apache': {
-                'host': salt['grains.get']('host')
+                'enabled': False,
+                'load_state': True,
+                'include_config': True,
+                'settings': {
+                    'host': salt['grains.get']('host')
+                }
+            },
+            'battery': {
+                'enabled': True,
+                'load_state': False,
+                'include_config': False
+            },
+            'cpu': {
+                'enabled': True,
+                'load_state': False,
+                'include_config': False
             },
             'df': {
-                'IgnoreSelected': 'false',
-                'ReportByDevice': 'false',
-                'ReportReserved': 'false',
-                'ReportInodes': 'false'
+                'enabled': False,
+                'load_state': True,
+                'include_config': True,
+                'settings': {
+                    'IgnoreSelected': 'false',
+                    'ReportByDevice': 'false',
+                    'ReportReserved': 'false',
+                    'ReportInodes': 'false'
+                }
             },
             'disk': {
-                'matches': []
+                'enabled': False,
+                'load_state': True,
+                'include_config': True,
+                'settings': {
+                    'matches': []
+                }
             },
-            'enable': false,
+            'entropy': {
+                'enabled': True,
+                'load_state': False,
+                'include_config': False
+            },
             'ethstat': {
-                'interface': 'eth0'
+                'enabled': False,
+                'load_state': True,
+                'include_config': True,
+                'settings': {
+                    'interface': 'eth0'
+                }
             },
             'interface': {
-                'interface': 'eth0',
-                'IgnoreSelected': 'false'
+                'enabled': False,
+                'load_state': True,
+                'include_config': True,
+                'settings': {
+                    'interfaces': ['eth0'],
+                    'IgnoreSelected': 'false'
+                }
             },
             'java': {
-                'host': 'localhost',
-                'port': '17264',
+                'enabled': False,
+                'load_state': True,
+                'include_config': True,
+                'settings': {
+                    'host': 'localhost',
+                    'port': '17264',
+                }
+            },
+            'load': {
+                'enabled': True,
+                'load_state': False,
+                'include_config': False
+            },
+            'memory': {
+                'enabled': True,
+                'load_state': False,
+                'include_config': False
             },
             'mysql': {
-                'databases': []
+                'enabled': False,
+                'load_state': True,
+                'include_config': True,
+                'settings': {
+                    'databases': []
+                }
             },
-            'network': {},
+            'network': {
+                'enabled': False,
+                'load_state': True,
+                'include_config': True,
+                'settings': {}
+            },
             'nginx': {
-                'url': 'http://localhost/check_status',
+                'enabled': False,
+                'load_state': True,
+                'include_config': True,
+                'settings': {
+                    'url': 'http://localhost/check_status',
+                }
             },
             'ntpd': {
-                'host': 'localhost',
-                'port': '123',
-                'ReverseLookups': 'false'
+                'enabled': False,
+                'load_state': True,
+                'include_config': True,
+                'settings': {
+                    'host': 'localhost',
+                    'port': '123',
+                    'ReverseLookups': 'false'
+                }
             },
             'ping': {
-                'hosts': ['google.com', 'yahoo.com'],
-                'hosts_from_grains': {},
+                'enabled': False,
+                'load_state': True,
+                'include_config': True,
+                'settings': {
+                    'hosts': ['google.com', 'yahoo.com'],
+                    'hosts_from_grains': {},
+                }
             },
             'postgresql': {
-                'databases': []
+                'enabled': False,
+                'load_state': True,
+                'include_config': True,
+                'settings': {
+                    'databases': []
+                }
             },
             'processes': {
-                'Processes': [],
-                'ProcessMatches': []
+                'enabled': True,
+                'load_state': True,
+                'include_config': True,
+                'settings': {
+                    'Processes': [],
+                    'ProcessMatches': []
+                }
+            },
+            'rrdtool': {
+                'enabled': False,
+                'load_state': False,
+                'include_config': True
             },
             'statsd': {
-                'host': '"::"',
-                'port': 8125
+                'enabled': False,
+                'load_state': True,
+                'include_config': True,
+                'settings': {
+                    'host': '"::"',
+                    'port': 8125
+                }
+            },
+            'swap': {
+                'enabled': True,
+                'load_state': False,
+                'include_config': False
             },
             'syslog': {
-                'loglevel': 'info'
+                'enabled': False,
+                'load_state': True,
+                'include_config': True,
+                'settings': {
+                    'loglevel': 'info'
+                }
+            },
+            'users': {
+                'enabled': True,
+                'load_state': False,
+                'include_config': False
             },
             'write_graphite': {
-                'node': salt['grains.get']('fqdn')
+                'enabled': False,
+                'load_state': True,
+                'include_config': True,
+                'settings': {
+                    'nodes': {}
+                }
             }
         }
     }

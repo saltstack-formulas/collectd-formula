@@ -1,8 +1,8 @@
 collectd:
   FQDNLookup: true
   TypesDB: ['/usr/share/collectd/types.db']
+  default_plugins: [battery, cpu, entropy, load, memory, swap, users]
   plugins:
-    default: [battery, cpu, entropy, load, memory, swap, users]
     enable: false
     syslog:
       loglevel: info

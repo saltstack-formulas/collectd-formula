@@ -1,7 +1,10 @@
-{% from "collectd/map.jinja" import collectd_settings with context %}
+{%- from "collectd/map.jinja" import collectd_settings with context %}
 
 include:
   - collectd.service
+{% for plugin_name, plugin in collectd_settings.plugins.iteritems() if plugin.enabled and plugin.load_state %}
+  - collectd.{{ plugin_name }}
+{%- endfor %}
 
 collectd:
   pkg.installed:
