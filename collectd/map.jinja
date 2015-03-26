@@ -19,17 +19,17 @@
 {# Settings dictionary with default values #}
 {% set default_settings = {
     'collectd': {
-        'default_plugins': [
-            'battery',
-            'cpu',
-            'entropy',
-            'load',
-            'memory',
-            'swap',
-            'users'
-        ],
         'FQDNLookup': 'false',
         'plugins': {
+            'default': [
+                'battery',
+                'cpu',
+                'entropy',
+                'load',
+                'memory',
+                'swap',
+                'users'
+            ],
             'apache': {
                 'host': salt['grains.get']('host')
             },
