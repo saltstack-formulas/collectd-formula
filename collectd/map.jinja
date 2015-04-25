@@ -6,6 +6,8 @@
         'plugindirconfig': '/etc/collectd/plugins',
         'service': 'collectd',
         'TypesDB': ['/usr/share/collectd/types.db'],
+        'user': 'root',
+        'group': 'root',
     },
     'RedHat': {
         'config': '/etc/collectd.conf',
@@ -13,6 +15,8 @@
         'plugindirconfig': '/etc/collectd.d',
         'service': 'collectd',
         'TypesDB': ['/usr/share/collectd/types.db'],
+        'user': 'root',
+        'group': 'root',
     },
 }, merge=salt['pillar.get']('collectd:lookup')) %}
 
