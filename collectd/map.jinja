@@ -6,6 +6,8 @@
         'plugindirconfig': '/etc/collectd/plugins',
         'service': 'collectd',
         'TypesDB': ['/usr/share/collectd/types.db'],
+        'user': 'root',
+        'group': 'root',
     },
     'RedHat': {
         'config': '/etc/collectd.conf',
@@ -13,6 +15,17 @@
         'plugindirconfig': '/etc/collectd.d',
         'service': 'collectd',
         'TypesDB': ['/usr/share/collectd/types.db'],
+        'user': 'root',
+        'group': 'root',
+    },
+    'FreeBSD': {
+        'config': '/usr/local/etc/collectd.conf',
+        'pkg': 'collectd5',
+        'plugindirconfig': '/usr/local/etc/collectd.d',
+        'service': 'collectd',
+        'TypesDB': ['/usr/local/share/collectd/types.db'],
+        'user': 'root',
+        'group': 'wheel',
     },
 }, merge=salt['pillar.get']('collectd:lookup')) %}
 

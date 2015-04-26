@@ -19,8 +19,8 @@ collectd-java:
 {{ collectd_settings.plugindirconfig }}/java.conf:
   file.managed:
     - source: salt://collectd/files/java.conf
-    - user: root
-    - group: root
+    - user: {{ collectd_settings.user }}
+    - group: {{ collectd_settings.group }}
     - mode: 644
     - template: jinja
     - watch_in:

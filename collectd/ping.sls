@@ -9,8 +9,8 @@ liboping0:
 {{ collectd_settings.plugindirconfig }}/ping.conf:
   file.managed:
     - source: salt://collectd/files/ping.conf
-    - user: root
-    - group: root
+    - user: {{ collectd_settings.user }}
+    - group: {{ collectd_settings.group }}
     - mode: 644
     - template: jinja
     - require:
