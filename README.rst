@@ -80,6 +80,11 @@ Enables and configures the postgresql plugin. Needs refinement.
 
 Enables and configures the syslog plugin.
 
+``collectd.python``
+------------
+
+Enables and configures the python plugin, which allows executiong arbitrary python scripts.
+
 Usage
 ================
 
