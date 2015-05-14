@@ -80,3 +80,6 @@ collectd:
     statsd:
       host: localhost
       port: 8125
+    md:
+      Device: ['md1', 'md2']
+      IgnoreSelected: false
