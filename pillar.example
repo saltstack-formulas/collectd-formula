@@ -83,3 +83,13 @@ collectd:
     md:
       Device: ['md1', 'md2']
       IgnoreSelected: false
+    python:
+      Globals: true
+      ModulePath: "/usr/share/collectd/modules"
+      LogTraces: true
+      Interactive: false
+      modules:
+        - name: module_name
+          variables:
+            var1: value1
+            var2: value2

@@ -101,6 +101,9 @@
             'write_graphite': {
                 'node': salt['grains.get']('fqdn')
             }
+            'python': {
+                'Globals': 'true'
+            }
         }
     }
 } %}
