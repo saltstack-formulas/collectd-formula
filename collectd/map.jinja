@@ -44,7 +44,14 @@
                 'users'
             ],
             'apache': {
-                'host': salt['grains.get']('host')
+                'instances' : [ {
+                        'name': 'name',
+                        'url': 'http://' + salt['grains.get']('host') + '/server-status?auto',
+                        'verifypeer': 'false',
+                        'verifyhost': 'false',
+                        'server': 'apache'
+                    }
+                ]
             },
             'df': {
                 'IgnoreSelected': 'false',
