@@ -7,10 +7,7 @@ collectd:
     apache:
       instances:
         - name: name
-          host: localhost
-          port: 80
-          proto: http
-          uri: /server-status?auto
+          url: 'http://localhost/server-status?auto'
           user: user
           pass: pass
 
