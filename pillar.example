@@ -4,6 +4,13 @@ collectd:
   plugins:
     default: [battery, cpu, entropy, load, memory, swap, users]
     enable: false
+    apache:
+      instances:
+        - name: name
+          url: 'http://localhost/server-status?auto'
+          user: user
+          pass: pass
+
     syslog:
       loglevel: info
     network:

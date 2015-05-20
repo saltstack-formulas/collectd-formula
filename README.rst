@@ -28,7 +28,17 @@ Metastate used to include service into respective plugin states, included in ``c
 ``collectd.apache``
 ------------
 
-Enables and configures the apache plugin.
+Enables and configures the [apache](https://collectd.org/wiki/index.php/Plugin:Apache) plugin.
+All common parameters are supported, so pass something like ::
+
+    apache:
+      instances:
+        - name: 'human-readable-name'
+          url: 'http://localhost/server-status?auto'
+          user: 'user'
+          pass: 'your-password'
+
+Only ``name`` and ``url`` are required.
 
 ``collectd.df``
 ------------
