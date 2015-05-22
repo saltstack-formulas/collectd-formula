@@ -32,6 +32,10 @@
 {# Settings dictionary with default values #}
 {% set default_settings = {
     'collectd': {
+        'Hostname': salt['grains.get']('fqdn'),
+        'Interval': 10,
+        'Timeout': 2,
+        'ReadThreads': 5,
         'FQDNLookup': 'false',
         'plugins': {
             'default': [
@@ -54,6 +58,7 @@
                 ]
             },
             'df': {
+                'Devices': [],
                 'IgnoreSelected': 'false',
                 'ReportByDevice': 'false',
                 'ReportReserved': 'false',
@@ -68,12 +73,16 @@
                 'interface': 'eth0'
             },
             'interface': {
-                'interface': 'eth0',
+                'interfaces': ['eth0'],
                 'IgnoreSelected': 'false'
             },
             'java': {
                 'host': 'localhost',
                 'port': '17264',
+            },
+            'md': {
+                'Devices': [],
+                'IgnoreSelected': 'true'
             },
             'mysql': {
                 'databases': []
@@ -106,7 +115,10 @@
                 'loglevel': 'info'
             },
             'write_graphite': {
-                'node': salt['grains.get']('fqdn')
+                'host': salt['grains.get']('fqdn'),
+                'port': 2003,
+                'prefix': 'collectd',
+                'postfix': ''
             },
             'python': {
                 'Globals': 'true'
