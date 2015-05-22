@@ -37,7 +37,9 @@ collectd:
           pass: 'mypass'
           name: 'mydb'
     df:
-      Device:
+      Devices:
+        - 'md1'
+        - 'md2'
       MountPoint:
       FSType: 'ext4'
       IgnoreSelected: false
