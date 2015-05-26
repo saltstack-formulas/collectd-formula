@@ -65,6 +65,21 @@ Enables and configures the interface plugin.
 
 Enables and configures the java plugin.
 
+``collectd.modules``
+------------
+
+This state helps distributing collectd external modules written in various languages
+(see [python](https://collectd.org/wiki/index.php/Plugin:Python) or
+[perl](https://collectd.org/wiki/index.php/Plugin:Perl) for example).
+
+Sample usage:
+
+* Include ``collectd.modules`` in your topfile.
+* Create collectd/modules/files folder in your states.
+* Put modules you need in that folder.
+* Modules will be put in ``collectd.moduledirconfig`` folder.
+
+
 ``collectd.mysql``
 ------------
 
