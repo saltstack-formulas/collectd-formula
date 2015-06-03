@@ -40,6 +40,15 @@ All common parameters are supported, so pass something like ::
 
 Only ``name`` and ``url`` are required.
 
+``collectd.dbi``
+------------
+
+Enables and configures the dbi plugin. It's used for quering databases with libdbi.
+Refer to `collectd.conf(5) <https://collectd.org/documentation/manpages/collectd.conf.5.shtml#plugin_dbi>`_ manpage for details
+and ``pillar.example`` to see how values should be populated.
+
+Beware this plugin may need additional packages installed on your system to run properly.
+
 ``collectd.df``
 ------------
 
