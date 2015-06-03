@@ -95,6 +95,11 @@ Enables and configures the network plugin.
 
 Enables and configures the ntpd plugin.
 
+``collectd.packages``
+------------
+
+This state is used to install OS packages collectd plugins depend on.
+
 ``collectd.postgresql``
 ------------
 
