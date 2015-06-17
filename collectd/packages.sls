@@ -10,4 +10,6 @@ collectd_additional_packages:
   {%- for pkg in collectd_settings.additional_packages %}
       - {{ pkg.name }}{% if pkg.version is defined and pkg.version %}: '{{ pkg.version }}' {% endif %}
   {%- endfor %}
+    - watch_in:
+      - service: collectd-service
 {%- endif %}
