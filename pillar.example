@@ -36,6 +36,9 @@ collectd:
     network:
       host: 'logstash'
       port: 25826
+      securitylevel: 'Encrypt'
+      username: 'user'
+      password: 'password'
     mysql:
       databases:
         - host: 'foo'
