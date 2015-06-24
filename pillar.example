@@ -60,8 +60,11 @@ collectd:
       Devices:
         - 'md1'
         - 'md2'
-      MountPoint:
-      FSType: 'ext4'
+      MountPoints:
+        - '/home'
+      FSTypes:
+        - 'ext4'
+        - 'tmpfs'
       IgnoreSelected: false
       ReportByDevice:
       ReportReserved:
