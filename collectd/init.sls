@@ -6,6 +6,9 @@ include:
 collectd:
   pkg.installed:
     - name: {{ collectd_settings.pkg }}
+    {%- if collectd_settings.pkg_version is defined and collectd_settings.pkg_version %}
+    - version: '{{ collectd_settings.pkg_version }}'
+    {%- endif %}
 
 {{ collectd_settings.plugindirconfig }}:
   file.directory:
