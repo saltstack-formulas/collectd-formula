@@ -9,6 +9,11 @@
         'moduledirconfig': '/usr/share/collectd/modules',
         'user': 'root',
         'group': 'root',
+        'plugins_deps': {
+            'python': ['libpython2.7'],
+            'mysql': ['libmysqlclient18', 'zlib1g'],
+            'ping': ['liboping0'],
+        }
     },
     'RedHat': {
         'config': '/etc/collectd.conf',
@@ -19,6 +24,11 @@
         'moduledirconfig': '/usr/share/collectd/modules',
         'user': 'root',
         'group': 'root',
+        'plugins_deps': {
+            'python': [],
+            'mysql': [],
+            'ping': [],
+        }
     },
     'FreeBSD': {
         'config': '/usr/local/etc/collectd.conf',
@@ -29,6 +39,11 @@
         'moduledirconfig': '/usr/local/share/collectd/modules',
         'user': 'root',
         'group': 'wheel',
+        'plugins_deps': {
+            'python': [],
+            'mysql': [],
+            'ping': [],
+        }
     },
 }, merge=salt['pillar.get']('collectd:lookup')) %}
 

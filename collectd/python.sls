@@ -3,6 +3,16 @@
 include:
   - collectd
 
+
+{% if collectd_settings.plugins_deps.python %}
+collectd-python-dependencies:
+  pkg.installed:
+    - names: {{ collectd_settings.plugins_deps.python }}
+    - require_in:
+      - file: {{ collectd_settings.plugindirconfig }}/python.conf
+{% endif %}
+
+
 {{ collectd_settings.plugindirconfig }}/python.conf:
   file.managed:
     - source: salt://collectd/files/python.conf

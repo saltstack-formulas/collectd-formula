@@ -3,8 +3,15 @@
 include:
   - collectd
 
-liboping0:
-  pkg.installed
+
+{% if collectd_settings.plugins_deps.ping %}
+collectd-ping-dependencies:
+  pkg.installed:
+    - names: {{ collectd_settings.plugins_deps.ping }}
+    - require_in:
+      - file: {{ collectd_settings.plugindirconfig }}/ping.conf
+{% endif %}
+
 
 {{ collectd_settings.plugindirconfig }}/ping.conf:
   file.managed:
@@ -13,7 +20,5 @@ liboping0:
     - group: {{ collectd_settings.group }}
     - mode: 644
     - template: jinja
-    - require:
-      - pkg: liboping0
     - watch_in:
       - service: collectd-service

@@ -3,6 +3,16 @@
 include:
   - collectd
 
+
+{% if collectd_settings.plugins_deps.mysql %}
+collectd-mysql-dependencies:
+  pkg.installed:
+    - names: {{ collectd_settings.plugins_deps.mysql }}
+    - require_in:
+      - file: {{ collectd_settings.plugindirconfig }}/mysql.conf
+{% endif %}
+
+
 {{ collectd_settings.plugindirconfig }}/mysql.conf:
   file.managed:
     - source: salt://collectd/files/mysql.conf
