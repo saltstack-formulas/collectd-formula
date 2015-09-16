@@ -3,7 +3,12 @@
 include:
   - collectd
 
-liboping0:
+{% set ping_pkg = {
+  'RedHat': 'collectd-ping',
+  'Debian': 'liboping0'
+}.get(grains['os_family']) %}
+
+{{ ping_pkg }}:
   pkg.installed
 
 {{ collectd_settings.plugindirconfig }}/ping.conf:
@@ -14,6 +19,6 @@ liboping0:
     - mode: 644
     - template: jinja
     - require:
-      - pkg: liboping0
+      - pkg: {{ ping_pkg }}
     - watch_in:
       - service: collectd-service
