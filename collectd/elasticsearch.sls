@@ -2,6 +2,7 @@
 
 include:
   - collectd
+  - collectd.python
 
 collectd-elasticsearch-module:
   pip.installed:

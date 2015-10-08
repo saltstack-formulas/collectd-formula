@@ -2,6 +2,7 @@
 
 include:
   - collectd
+  - collectd.python
 
 collectd-redis-module:
   pip.installed:

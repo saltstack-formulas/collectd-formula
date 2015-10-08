@@ -2,9 +2,7 @@
 
 include:
   - collectd
-
-python-pip:
-    pkg.installed
+  - collectd.python
 
 collectd-ntp-module:
   pip.installed:
