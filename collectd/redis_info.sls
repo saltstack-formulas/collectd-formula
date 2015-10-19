@@ -4,17 +4,17 @@ include:
   - collectd
   - collectd.python
 
-collectd-ntp-module:
+collectd-redis-module:
   pip.installed:
-  - name: collectd-ntp == 0.0.4
+  - name: git+https://github.com/ministryofjustice/redis-collectd-plugin@make-it-a-pip
   - require_in:
     - service: collectd
   - watch_in:
     - service: collectd
 
-{{ collectd_settings.plugindirconfig }}/ntpd.conf:
+{{ collectd_settings.plugindirconfig }}/redis_info.conf:
   file.managed:
-    - source: salt://collectd/files/ntpd.conf
+    - source: salt://collectd/files/redis_info.conf
     - user: {{ collectd_settings.user }}
     - group: {{ collectd_settings.group }}
     - mode: 644
