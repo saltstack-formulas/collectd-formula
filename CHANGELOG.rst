@@ -1,4 +1,4 @@
-template formula
+Collectd formula
 ================
 
 1.1.0
