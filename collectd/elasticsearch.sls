@@ -4,17 +4,18 @@ include:
   - collectd
   - collectd.python
 
-collectd-ntp-module:
+collectd-elasticsearch-module:
   pip.installed:
-  - name: collectd-ntp == 0.0.4
+  - name: git+https://github.com/ministryofjustice/elasticsearch-collectd-plugin
   - require_in:
     - service: collectd
   - watch_in:
     - service: collectd
 
-{{ collectd_settings.plugindirconfig }}/ntpd.conf:
+
+{{ collectd_settings.plugindirconfig }}/elasticsearch.conf:
   file.managed:
-    - source: salt://collectd/files/ntpd.conf
+    - source: salt://collectd/files/elasticsearch.conf
     - user: {{ collectd_settings.user }}
     - group: {{ collectd_settings.group }}
     - mode: 644
