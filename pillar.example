@@ -58,6 +58,8 @@ collectd:
           user: 'myuser'
           pass: 'mypass'
           name: 'mydb'
+    powerdns:
+      socket: '/var/run/pdns.controlsocket'
     df:
       Devices:
         - 'md1'

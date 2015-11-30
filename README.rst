@@ -119,6 +119,11 @@ This state is used to install OS packages collectd plugins depend on.
 
 Enables and configures the postgresql plugin. Needs refinement.
 
+``collectd.powerdns``
+-----------------------
+
+Enables and configures the powerdns plugin.
+
 ``collectd.syslog``
 -------------------
 
