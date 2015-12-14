@@ -129,6 +129,11 @@ Enables and configures the powerdns plugin.
 
 Enables and configures the syslog plugin.
 
+``collectd.tail``
+-------------------
+
+Enables and configures the tail plugin.
+
 ``collectd.python``
 -------------------
 

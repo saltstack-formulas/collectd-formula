@@ -115,6 +115,19 @@ collectd:
     statsd:
       host: localhost
       port: 8125
+    tail:
+      files:
+        - name: '/var/log/exim4/mainlog'
+          instance: exim
+          match:
+            - instance: 'total'
+              dstype: 'CounterAdd'
+              type: 'ipt_bytes'
+              regex: 'S=([1-9][0-9]*)'
+            - instance: 'local_user'
+              dstype: 'CounterInc'
+              type: 'counter'
+              regex: '\\<R=local_user\\>'
     md:
       Device: ['md1', 'md2']
       IgnoreSelected: false
