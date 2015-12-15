@@ -130,6 +130,9 @@ collectd:
     md:
       Device: ['md1', 'md2']
       IgnoreSelected: false
+    librato:
+      user: example@example.com
+      token: deadbeef
     python:
       Globals: true
       ModulePath: "/usr/share/collectd/modules"
