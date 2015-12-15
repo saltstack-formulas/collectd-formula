@@ -3,7 +3,6 @@ collectd:
   TypesDB: ['/usr/share/collectd/types.db']
   plugins:
     default: [battery, cpu, entropy, load, memory, swap, users]
-    enable: false
     apache:
       instances:
         - name: name
@@ -59,6 +58,8 @@ collectd:
           user: 'myuser'
           pass: 'mypass'
           name: 'mydb'
+    powerdns:
+      socket: '/var/run/pdns.controlsocket'
     df:
       Devices:
         - 'md1'
@@ -103,7 +104,6 @@ collectd:
       port: "2003"
       prefix: "collectd"
       postfix: ""
-      protocol: "tcp"
       logsenderrors: false
       escapecharacter: "_"
       separateinstances: true
@@ -115,6 +115,18 @@ collectd:
     statsd:
       host: localhost
       port: 8125
+    tail:
+      - file: '/var/log/exim4/mainlog'
+        instance: exim
+        match:
+          - instance: 'total'
+            dstype: 'CounterAdd'
+            type: 'ipt_bytes'
+            regex: 'S=([1-9][0-9]*)'
+          - instance: 'local_user'
+            dstype: 'CounterInc'
+            type: 'counter'
+            regex: '\\<R=local_user\\>'
     md:
       Device: ['md1', 'md2']
       IgnoreSelected: false

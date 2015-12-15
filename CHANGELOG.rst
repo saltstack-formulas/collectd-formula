@@ -1,5 +1,10 @@
-template formula
+Collectd formula
 ================
+
+1.1.0
+
+Feature release:
+* Add elasticsearch, ntpd and redis to available modules
 
 0.0.6 (2014-08-18)
 

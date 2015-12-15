@@ -39,6 +39,9 @@
         'Interval': 10,
         'Timeout': 2,
         'ReadThreads': 5,
+        'WriteQueueLimitHigh': 2000000,
+        'WriteQueueLimitLow': 1800000,
+        'CollectInternalStats': 'false',
         'FQDNLookup': 'false',
         'plugins': {
             'default': [
@@ -65,13 +68,13 @@
                 'IgnoreSelected': 'false',
                 'ReportByDevice': 'false',
                 'ReportReserved': 'false',
-                'ReportInodes': 'false'
+                'ReportInodes': 'false',
+                'ValuesPercentage': 'false'
             },
             'disk': {
                 'matches': [],
                 'IgnoreSelected': 'false'
             },
-            'enable': false,
             'ethstat': {
                 'interface': 'eth0'
             },
@@ -106,6 +109,9 @@
             'postgresql': {
                 'databases': []
             },
+            'powerdns': {
+                'socket': '/var/run/pdns.controlsocket'
+            },
             'processes': {
                 'Processes': [],
                 'ProcessMatches': []
@@ -125,6 +131,23 @@
             },
             'python': {
                 'Globals': 'true'
+            },
+            'elasticsearch': {
+            	'host': 'localhost',
+            	'port': 9200,
+            	'cluster': 'elasticsearch',
+            	'version': '1.0',
+            	'verbose': 0
+            },
+            'redis_info': {
+            	'host': 'localhost',
+            	'port': 6379,
+            	'verbose': 0
+            },
+            'rrdtool': {
+                'datadir': '/var/lib/collectd/rrd',
+                'cacheflush': 120,
+                'writespersecond': 50 
             }
         }
     }
