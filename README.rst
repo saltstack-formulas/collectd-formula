@@ -139,6 +139,11 @@ Enables and configures the tail plugin.
 
 Enables and configures the python plugin, which allows executiong arbitrary python scripts.
 
+``collectd.librato``
+------------
+
+Enables and configures write_http plugin for reporting to Librato
+
 Usage
 =====
 
