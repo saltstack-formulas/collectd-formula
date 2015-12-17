@@ -253,3 +253,16 @@ Enables and configures the syslog plugin.
 ~~~~~~~~~~~~~~~~~~~
 
 Enables and configures the python plugin, which allows executiong arbitrary python scripts.
+
+``collectd.write_riemann``
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Enables and configures the write_riemann plugin, which outputs metric data to a riemann server
+
+.. code:: yaml
+
+   write_riemann:
+      host: "riemann.service.dsd.io"
+      port: 5555
+      tag: "riemann"
+

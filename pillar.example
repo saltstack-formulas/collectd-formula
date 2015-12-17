@@ -109,6 +109,10 @@ collectd:
       separateinstances: true
       storerates: true
       alwaysappendds: false
+    write_riemann:
+      host: "riemann.service.dsd.io"
+      port: 5555
+      tag: "riemann"
     processes:
       - java
       - python
