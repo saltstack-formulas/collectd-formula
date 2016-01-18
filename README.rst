@@ -270,8 +270,9 @@ Enables and configures the write_riemann plugin, which outputs metric data to a 
 MOJ Notes
 =========
 
-``collectd.df``
-~~~~~~~~~~~~~~~
+collectd.df
+-----------
+
 Setting ValuesPercentage to default to show usage as percentages
 
 .. code:: yaml
@@ -284,3 +285,4 @@ Setting ValuesPercentage to default to show usage as percentages
                 'ReportInodes': 'false',
                 'ValuesPercentage': 'true'
             },
+
