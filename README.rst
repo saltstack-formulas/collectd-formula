@@ -266,3 +266,23 @@ Enables and configures the write_riemann plugin, which outputs metric data to a 
       port: 5555
       tag: "riemann"
 
+
+MOJ Notes
+=========
+
+collectd.df
+-----------
+
+Setting ValuesPercentage to default to show usage as percentages
+
+.. code:: yaml
+
+            'df': {
+                'Devices': [],
+                'IgnoreSelected': 'false',
+                'ReportByDevice': 'false',
+                'ReportReserved': 'false',
+                'ReportInodes': 'false',
+                'ValuesPercentage': 'true'
+            },
+
