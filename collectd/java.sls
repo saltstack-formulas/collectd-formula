@@ -10,11 +10,12 @@ collectd-java:
         - force: False
         - makedirs: False
 
+{% if collectd_settings.plugins.java.lib is defined and collectd_settings.plugins.java.lib %}
 {{ collectd_settings.javalib }}:
     file.symlink:
         - target: {{ collectd_settings.plugins.java.lib }}
         - makedirs: False
-
+{% endif %}
 
 {{ collectd_settings.plugindirconfig }}/java.conf:
   file.managed:
