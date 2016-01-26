@@ -1,6 +1,13 @@
 Collectd formula
 ================
 
+1.1.x (unreleased)
+
+- The creation of a symlink for `javalib` is optional and controlled by the parameter found in the pillar. If the `collected.plugins.java.lib` value is not present, the symlink is not created, thus avoiding a highstate failure. Resolves issue 26_.
+
+.. _26: https://github.com/saltstack-formulas/collectd-formula/issues/26
+
+
 1.1.0
 
 Feature release:
