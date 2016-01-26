@@ -81,19 +81,19 @@ Enables and configures the java plugin.
 
 Requires the installation of JDK.
 
-Pillar values used under `collectd.plugins.java`, an example:
+Pillar values used under `collectd.plugins.java`, an example ::
 
 
-.. code-block:: yaml
+    collectd:
+      plugins:
+        java:
+          host: localhost
+          port: 39999
+          user: 'someuser' (optional)
+          group: 'someuser' (optional)
+          lib: '/some/file' (optional)
 
-collectd:
-  plugins:
-    java:
-      host: localhost
-      port: 39999
-      user: 'someuser' (optional)
-      group: 'someuser' (optional)
-      lib: '/some/file' (optional)
+
 
 ``collectd.modules``
 --------------------
