@@ -8,7 +8,7 @@ include:
     - source: salt://collectd/files/network.conf
     - user: {{ collectd_settings.user }}
     - group: {{ collectd_settings.group }}
-    - mode: 644
+    - mode: '0600'
     - template: jinja
     - watch_in:
       - service: collectd-service
