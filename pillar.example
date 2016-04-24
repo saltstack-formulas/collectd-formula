@@ -30,6 +30,10 @@ collectd:
               value: user
             - name: password
               value: pass
+    exec:
+      - Exec "myuser:mygroup" "myprog"
+      - Exec "otheruser" "/path/to/another/binary" "arg0" "arg1"
+      - NotificationExec "user" "/usr/lib/collectd/exec/handle_notification"
     syslog:
       loglevel: info
     network:
