@@ -1,5 +1,8 @@
 collectd:
-  FQDNLookup: true
+  # This line restores the old behaviour, comment it out to use the system's hostname
+  Hostname: {{ salt['grains.get']('fqdn') }}
+  # If Hostname is not defined, whether collectd will try to figure it out as a FQDN (default: true)
+  FQDNLookup: false
   TypesDB: ['/usr/share/collectd/types.db']
   plugins:
     default: [battery, cpu, entropy, load, memory, swap, users]

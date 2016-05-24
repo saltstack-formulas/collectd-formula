@@ -35,14 +35,13 @@
 {# Settings dictionary with default values #}
 {% set default_settings = {
     'collectd': {
-        'Hostname': salt['grains.get']('fqdn'),
         'Interval': 10,
         'Timeout': 2,
         'ReadThreads': 5,
         'WriteQueueLimitHigh': 2000000,
         'WriteQueueLimitLow': 1800000,
         'CollectInternalStats': 'false',
-        'FQDNLookup': 'false',
+        'FQDNLookup': 'true',
         'plugins': {
             'default': [
                 'battery',
