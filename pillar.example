@@ -3,6 +3,7 @@ collectd:
   TypesDB: ['/usr/share/collectd/types.db']
   types:
     - 'jmx_memory  value:GAUGE:0:U'
+  purge_plugindir: false        # if true, all non salt-managed files in plugindir will be removed
   plugins:
     default: [battery, cpu, entropy, load, memory, swap, users]
     curl_json:
