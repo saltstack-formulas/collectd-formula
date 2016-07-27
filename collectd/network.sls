@@ -19,7 +19,7 @@ include:
     - user: {{ collectd_settings.user }}
     - group: {{ collectd_settings.group }}
     - mode: '0600'
-    - content: '{{ collectd_settings.plugins.network.username }}: {{ collectd_settings.plugins.network.password }}'
+    - contents: '{{ collectd_settings.plugins.network.username }}: {{ collectd_settings.plugins.network.password }}'
     - watch_in:
       - service: collectd-service
 {% endif %}
