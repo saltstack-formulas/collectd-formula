@@ -150,3 +150,7 @@ collectd:
     extra:
       cpu:
         ReportByCpu: false
+    tcpconns:
+      listening_ports: 'true'
+      local_ports: []
+      remote_ports: []
