@@ -2,7 +2,6 @@
 
 include:
   - collectd
-  - collectd.python
 
 collectd-elasticsearch-module:
   git.latest:
