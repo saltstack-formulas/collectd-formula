@@ -142,11 +142,19 @@
                 'Interactive': 'false'
             },
             'elasticsearch': {
-            	'host': 'localhost',
-            	'port': 9200,
-            	'cluster': 'elasticsearch',
-            	'version': '1.0',
-            	'verbose': 0
+              'host': 'localhost',
+              'port': 9200,
+              'additional_metrics': [""],
+              'cluster': 'elasticsearch',
+              'cluster_health': 'false',
+              'detailed_metrics': 'false',
+              'index_interval': 300,
+              'index_stats': 'false',
+              'indexes': ["_all"],
+              'interval': 10,
+              'gitrevision': 'master',
+              'thread_pools': ["search","index"],
+              'verbose': 'false'
             },
             'redis_info': {
             	'host': 'localhost',

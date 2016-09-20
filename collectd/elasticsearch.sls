@@ -5,8 +5,10 @@ include:
   - collectd.python
 
 collectd-elasticsearch-module:
-  pip.installed:
-  - name: git+https://github.com/ministryofjustice/elasticsearch-collectd-plugin
+  git.latest:
+  - name: https://github.com/signalfx/collectd-elasticsearch
+  - rev: {{ collectd_settings.plugins.elasticsearch.gitrevision }}
+  - target: /usr/share/collectd/collectd-elasticsearch
   - require_in:
     - service: collectd-service
   - watch_in:
