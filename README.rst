@@ -62,7 +62,7 @@ Enables and configures the disk plugin.
 ``collectd.elasticsearch``
 --------------------------
 
-Enables and configures the `elasticsearch plugin <https://github.com/ministryofjustice/elasticsearch-collectd-plugin>`_
+Enables and configures the `elasticsearch plugin <https://github.com/signalfx/collectd-elasticsearch>`_
 
 ``collectd.ethstat``
 --------------------
