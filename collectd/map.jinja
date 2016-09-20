@@ -157,6 +157,15 @@
                 'datadir': '/var/lib/collectd/rrd',
                 'cacheflush': 120,
                 'writespersecond': 50
+            },
+            'openvpn': {
+              'status_file': [
+                '/var/log/openvpn/openvpn-status.log'
+              ],
+              'individual_users': 'false',
+              'user_count': 'true',
+              'compression': 'false',
+              'improved_naming_scheme': 'true'
             }
         }
     }

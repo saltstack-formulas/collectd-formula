@@ -150,3 +150,10 @@ collectd:
     extra:
       cpu:
         ReportByCpu: false
+    openvpn:
+      status_file:
+        - "/var/log/openvpn/openvpn-status.log"
+      individual_users: 'false'
+      user_count: 'true'
+      compression: 'false'
+      improved_naming_scheme: 'true'
