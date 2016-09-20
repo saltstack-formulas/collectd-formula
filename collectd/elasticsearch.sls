@@ -8,9 +8,9 @@ collectd-elasticsearch-module:
   pip.installed:
   - name: git+https://github.com/ministryofjustice/elasticsearch-collectd-plugin
   - require_in:
-    - service: collectd
+    - service: collectd-service
   - watch_in:
-    - service: collectd
+    - service: collectd-service
 
 
 {{ collectd_settings.plugindirconfig }}/elasticsearch.conf:

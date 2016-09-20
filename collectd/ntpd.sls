@@ -8,9 +8,9 @@ collectd-ntp-module:
   pip.installed:
   - name: collectd-ntp == 0.0.4
   - require_in:
-    - service: collectd
+    - service: collectd-service
   - watch_in:
-    - service: collectd
+    - service: collectd-service
 
 {{ collectd_settings.plugindirconfig }}/ntpd.conf:
   file.managed:

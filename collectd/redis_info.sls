@@ -8,9 +8,9 @@ collectd-redis-module:
   pip.installed:
   - name: git+https://github.com/ministryofjustice/redis-collectd-plugin@make-it-a-pip
   - require_in:
-    - service: collectd
+    - service: collectd-service
   - watch_in:
-    - service: collectd
+    - service: collectd-service
 
 {{ collectd_settings.plugindirconfig }}/redis_info.conf:
   file.managed:
