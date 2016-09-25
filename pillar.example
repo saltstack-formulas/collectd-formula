@@ -161,4 +161,13 @@ collectd:
       user_count: 'true'
       compression: 'false'
       improved_naming_scheme: 'true'
-
+    rabbitmq:
+      username: 'guest'
+      password: 'guest'
+      realm: 'RabbitMQ Management'
+      host: 'localhost'
+      port: 15672
+      ignore_queue_regex:
+        - '^queue'
+      ignore_exchange_regex:
+        - '^exchange'
