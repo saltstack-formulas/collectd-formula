@@ -3,6 +3,32 @@ collectd:
   TypesDB: ['/usr/share/collectd/types.db']
   plugins:
     default: [battery, cpu, entropy, load, memory, swap, users]
+    curl_json:
+      Url "http://127.0.0.1/status?json":
+        instance: php-fpm
+        keys:
+          start since:
+            type: uptime
+          accepted conn:
+            type: http_requests
+          listen queue:
+            type: phpfpm_listen_queue
+          listen queue len:
+            type: phpfpm_listen_queue
+          max listen queue:
+            type: phpfpm_listen_queue
+          idle processes:
+            type: phpfpm_processes
+          active processes:
+            type: phpfpm_processes
+          total processes:
+            type: phpfpm_processes
+          max active processes:
+            type: phpfpm_processes
+          max children reached:
+            type: phpfpm_processes
+          slow requests:
+            type: phpfpm_slow_requests
     apache:
       instances:
         - name: name
