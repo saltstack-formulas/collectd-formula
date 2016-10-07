@@ -150,6 +150,11 @@ Enables and configures the syslog plugin.
 
 Enables and configures the tail plugin.
 
+``collectd.curl_json``
+-------------------
+
+Enables and configures the curl_json plugin.
+
 ``collectd.python``
 -------------------
 
