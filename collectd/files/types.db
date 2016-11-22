@@ -1,0 +1,5 @@
+{%- from "collectd/map.jinja" import collectd_settings with context %}
+
+{%- for type in collectd_settings.types %}
+{{ type }}
+{%- endfor %}
