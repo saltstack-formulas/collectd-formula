@@ -72,14 +72,14 @@ collectd:
       password: 'password'
     mysql:
       databases:
-        - host: 'foo'
+        mydb:
+          host: 'foo'
           port: '3306'
           user: 'myuser'
           pass: 'mypass'
-          name: 'mydb'
           masterstats: true
-        - host: 'foo'
-          name: 'mydb'
+        mydb:
+          host: 'foo'
           socket: '/var/run/mysql/mysqld.sock'
           slavestats: true
           slavenotifications: true
