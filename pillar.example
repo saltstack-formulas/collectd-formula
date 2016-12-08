@@ -39,7 +39,7 @@ collectd:
           pass: pass
     dbi:
       queries:
-        - name: mysql_user_connections
+        mysql_user_connections:
           statement: SELECT user, count(*) as nof_connections FROM information_schema.processlist GROUP BY user
           results:
             - type: gauge
@@ -47,7 +47,7 @@ collectd:
               instancesFrom: user
               valuesFrom: nof_connections
       databases:
-        - name: name
+        name:
           driver: mysql
           queries:
             - mysql_user_connections
