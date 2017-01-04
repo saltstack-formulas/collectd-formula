@@ -4,6 +4,7 @@ include:
   - collectd
 
 liboping0:
+{{ collectd_settings.plugins.ping.pkg.name }}:
   pkg.installed
 
 {{ collectd_settings.plugindirconfig }}/ping.conf:
@@ -14,6 +15,6 @@ liboping0:
     - mode: 644
     - template: jinja
     - require:
-      - pkg: liboping0
+      - pkg: {{ collectd_settings.plugins.ping.pkg.name }}
     - watch_in:
       - service: collectd-service
