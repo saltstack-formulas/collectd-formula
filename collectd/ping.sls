@@ -3,7 +3,6 @@
 include:
   - collectd
 
-liboping0:
 {{ collectd_settings.plugins.ping.pkg.name }}:
   pkg.installed
 
