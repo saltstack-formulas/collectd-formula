@@ -160,6 +160,11 @@ Enables and configures the curl_json plugin.
 
 Enables and configures the python plugin, which allows executiong arbitrary python scripts.
 
+``collectd.vmem``
+-------------------
+
+Enables and configures the vmem plugin.
+
 ``collectd.librato``
 ------------
 
