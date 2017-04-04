@@ -26,3 +26,16 @@ collectd-java:
     - template: jinja
     - watch_in:
       - service: collectd-service
+
+#If you set tomcat: true in pillar it will also add config for catalina
+{% if collectd_settings.plugins.java.tomcat is defined and collectd_settings.plugins.java.tomcat %}
+{{ collectd_settings.plugindirconfig }}/catalina.conf:
+  file.managed:
+    - source: salt://collectd/files/catalina.conf
+    - user: {{ collectd_settings.user }}
+    - group: {{ collectd_settings.group }}
+    - mode: 644
+    - template: jinja
+    - watch_in:
+      - service: collectd-service
+{% endif %}
