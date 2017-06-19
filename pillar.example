@@ -31,6 +31,15 @@ collectd:
             type: phpfpm_processes
           slow requests:
             type: phpfpm_slow_requests
+    curl_xml:
+      Url "127.0.0.1/stats":
+        instance: instance
+        xpaths:
+          - name: /stats
+            data:
+              type: uptime
+              values_from:
+                - uptime
     apache:
       instances:
         - name: name
