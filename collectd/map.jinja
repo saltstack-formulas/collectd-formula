@@ -127,7 +127,7 @@
             'write_graphite': {
                 'host': salt['grains.get']('fqdn'),
                 'port': 2003,
-                'prefix': 'collectd',
+                'prefix': 'collectd.',
                 'postfix': ''
             },
             'write_riemann': {

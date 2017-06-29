@@ -134,7 +134,7 @@ collectd:
     write_graphite:
       host: graphite-host
       port: "2003"
-      prefix: "collectd"
+      prefix: "collectd."
       postfix: ""
       logsenderrors: false
       escapecharacter: "_"
