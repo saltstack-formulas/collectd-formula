@@ -132,6 +132,7 @@ collectd:
     disk:
       matches: ['/^[hs]d[a-f][0-9]?$/']
     write_graphite:
+      name: graphite
       host: graphite-host
       port: "2003"
       prefix: "collectd"
