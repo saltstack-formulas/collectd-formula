@@ -77,7 +77,7 @@ Enables and configures the interface plugin.
 ``collectd.java``
 -----------------
 
-Enables and configures the java plugin.
+Enables and configures the java plugin. If enabled it will also collect tomcat catalina metrics.
 
 Requires the installation of JDK.
 
@@ -92,6 +92,7 @@ Pillar values used under `collectd.plugins.java`, an example ::
           user: 'someuser' (optional)
           group: 'someuser' (optional)
           lib: '/some/file' (optional)
+          tomcat: true (optional)
 
 
 
