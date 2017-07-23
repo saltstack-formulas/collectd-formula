@@ -77,7 +77,7 @@ Enables and configures the interface plugin.
 ``collectd.java``
 -----------------
 
-Enables and configures the java plugin.
+Enables and configures the java plugin. If enabled it will also collect tomcat catalina metrics.
 
 Requires the installation of JDK.
 
@@ -92,6 +92,7 @@ Pillar values used under `collectd.plugins.java`, an example ::
           user: 'someuser' (optional)
           group: 'someuser' (optional)
           lib: '/some/file' (optional)
+          tomcat: true (optional)
 
 
 
@@ -135,6 +136,11 @@ This state is used to install OS packages collectd plugins depend on.
 
 Enables and configures the postgresql plugin. Needs refinement.
 
+``collectd.processes``
+----------------------
+
+Enables and configures the processes plugin
+
 ``collectd.powerdns``
 -----------------------
 
@@ -159,6 +165,11 @@ Enables and configures the curl_json plugin.
 -------------------
 
 Enables and configures the python plugin, which allows executiong arbitrary python scripts.
+
+``collectd.vmem``
+-------------------
+
+Enables and configures the vmem plugin.
 
 ``collectd.librato``
 ------------
