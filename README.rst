@@ -166,6 +166,11 @@ Enables and configures the tail plugin.
 
 Enables and configures the curl_json plugin.
 
+``collectd.curl_xml``
+-------------------
+
+Enables and configures the curl_xml plugin.
+
 ``collectd.python``
 -------------------
 
