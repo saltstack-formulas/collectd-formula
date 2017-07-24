@@ -103,7 +103,6 @@ collectd:
         - 'tmpfs'
       IgnoreSelected: false
       ReportByDevice:
-      ReportReserved:
       ReportInodes:
     ntpd:
       host: localhost
