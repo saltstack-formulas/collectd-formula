@@ -49,6 +49,11 @@ and ``pillar.example`` to see how values should be populated.
 
 Beware this plugin may need additional packages installed on your system to run properly.
 
+``collectd.csv``
+----------------
+
+Enables and configures the csv write plugin.
+
 ``collectd.df``
 ---------------
 
@@ -160,6 +165,11 @@ Enables and configures the tail plugin.
 -------------------
 
 Enables and configures the curl_json plugin.
+
+``collectd.curl_xml``
+-------------------
+
+Enables and configures the curl_xml plugin.
 
 ``collectd.python``
 -------------------

@@ -68,11 +68,16 @@
                 'host': 'localhost',
                 'port': '8053',
             },
+            'csv': {
+              'DataDir': '/var/lib/collectd/csv',
+              'StoreRates': False
+            },
             'df': {
                 'Devices': [],
                 'IgnoreSelected': 'false',
                 'ReportByDevice': 'false',
                 'ReportReserved': 'false',
+                'disable_report_reserved': 'false',
                 'ReportInodes': 'false',
                 'ValuesPercentage': 'false'
             },
@@ -135,7 +140,7 @@
             'write_graphite': {
                 'host': salt['grains.get']('fqdn'),
                 'port': 2003,
-                'prefix': 'collectd',
+                'prefix': 'collectd.',
                 'postfix': ''
             },
             'write_riemann': {
