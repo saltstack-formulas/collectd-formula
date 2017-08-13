@@ -143,6 +143,7 @@ collectd:
       name: graphite
       host: graphite-host
       port: "2003"
+      protocol: "tcp"
       prefix: "collectd."
       postfix: ""
       logsenderrors: false
