@@ -139,6 +139,10 @@
                 'prefix': 'collectd',
                 'postfix': ''
             },
+            'write_http': {
+                'host': salt['grains.get']('fqdn'),
+                'port': 80,
+            },
             'write_riemann': {
                 'host': salt['grains.get']('fqdn'),
                 'port': 5555,
