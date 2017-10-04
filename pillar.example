@@ -101,6 +101,8 @@ collectd:
           name: 'mydb'
     powerdns:
       socket: '/var/run/pdns.controlsocket'
+    protocols:
+      IgnoreSelected: True
     df:
       Devices:
         - 'md1'
