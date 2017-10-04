@@ -8,7 +8,7 @@ include:
     - source: salt://collectd/files/mysql.conf
     - user: {{ collectd_settings.user }}
     - group: {{ collectd_settings.group }}
-    - mode: 644
+    - mode: 600
     - template: jinja
     - watch_in:
       - service: collectd-service
