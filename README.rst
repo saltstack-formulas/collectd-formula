@@ -151,6 +151,11 @@ Enables and configures the processes plugin
 
 Enables and configures the powerdns plugin.
 
+``collectd.redis``
+-----------------------
+
+Enables and configures the redis plugin.
+
 ``collectd.syslog``
 -------------------
 
