@@ -17,6 +17,7 @@ collectd:
     - dir_mode: 755
     - file_mode: 644
     - makedirs: True
+    - clean: {{ collectd_settings.purge_plugindir }}
     - require_in:
       - service: collectd-service # set proper file mode before service runs
 
