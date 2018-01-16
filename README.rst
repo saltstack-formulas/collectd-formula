@@ -196,6 +196,11 @@ Enables and configures the vmem plugin.
 
 Enables and configures write_http plugin for reporting to Librato
 
+``collectd.zookeeper``
+------------
+
+Enables and configures the zookeeper plugin.
+
 Usage
 =====
 
