@@ -212,3 +212,6 @@ collectd:
         - '^queue'
       ignore_exchange_regex:
         - '^exchange'
+    zookeeper:
+      host: localhost
+      port: 2181
