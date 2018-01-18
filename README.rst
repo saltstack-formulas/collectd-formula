@@ -96,6 +96,7 @@ Pillar values used under `collectd.plugins.java`, an example ::
           port: 39999
           user: 'someuser' (optional)
           group: 'someuser' (optional)
+          prefix: 'someprefix-' (optional)
           lib: '/some/file' (optional)
           tomcat: true (optional)
 

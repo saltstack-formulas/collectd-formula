@@ -125,6 +125,7 @@ collectd:
       port: 17264
       user: ''
       pass: ''
+      prefix: ''
       lib: '/usr/lib/jvm/java-7-oracle/jre/lib/amd64/libjava.so'
     ethstat:
       interface: 'eth0'
