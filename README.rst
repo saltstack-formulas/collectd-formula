@@ -137,6 +137,11 @@ Enables and configures the ntpd plugin.
 
 This state is used to install OS packages collectd plugins depend on.
 
+``collectd.perl``
+-----------------------
+
+Enables and configures the perl plugin.
+
 ``collectd.postgresql``
 -----------------------
 
