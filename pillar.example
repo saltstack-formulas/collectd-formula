@@ -104,6 +104,15 @@ collectd:
       socket: '/var/run/pdns.controlsocket'
     protocols:
       IgnoreSelected: True
+    openldap:
+      instances:
+        - name: ldap
+          url: ldap://localhost
+          binddn: "cn=monitor, dc=example, dc=com"
+          password: MyOwnPassword
+          verifyhost: true
+          starttls: true
+          cacert: /etc/ssl/certs/ca-cert.pem
     df:
       Devices:
         - 'md1'
