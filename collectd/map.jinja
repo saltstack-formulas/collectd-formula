@@ -66,8 +66,16 @@
                 ]
             },
             'bind': {
+                'proto': 'http',
                 'host': 'localhost',
                 'port': '8053',
+                'parsetime': true,
+                'opcodes': true,
+                'qtypes': true,
+                'serverstats': true,
+                'zonemaintstats': true,
+                'resolverstats': false,
+                'memorystats': true,
             },
             'csv': {
               'DataDir': '/var/lib/collectd/csv',
