@@ -40,6 +40,11 @@ All common parameters are supported, so pass something like ::
 
 Only ``name`` and ``url`` are required.
 
+``collectd.bind``
+---------------
+
+Enables and configures the bind plugin.
+
 ``collectd.dbi``
 ----------------
 
