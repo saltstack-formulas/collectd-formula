@@ -206,6 +206,11 @@ Enables and configures write_http plugin for reporting to Librato
 
 Enables and configures the zookeeper plugin.
 
+``collectd.unixsock``
+------------
+
+Enables and configures the unixsock plugin.
+
 Usage
 =====
 

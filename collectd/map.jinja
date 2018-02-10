@@ -189,6 +189,12 @@
               'local_ports': [],
               'remote_ports': []
             },
+            'unixsock': {
+              'socket_file': '/var/run/collectd.socket',
+              'socket_group': 'root',
+              'socket_perms': '0644',
+              'delete_socket': true,
+            },
             'vmem': {
               'verbose': 'false'
             },
