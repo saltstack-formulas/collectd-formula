@@ -211,7 +211,7 @@ collectd:
       LogTraces: true
       Interactive: false
       modules:
-        module_name
+        module_name: # Replace module_name by your Python module
           variables:
             var1: value1
             var2: value2
