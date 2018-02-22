@@ -105,6 +105,10 @@ Pillar values used under `collectd.plugins.java`, an example ::
           tomcat: true (optional)
 
 
+``collectd.logfile``
+------------
+
+Enables and configures the logfile plugin.
 
 ``collectd.modules``
 --------------------
