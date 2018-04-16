@@ -4,6 +4,7 @@ collectd:
   types:
     - 'jmx_memory  value:GAUGE:0:U'
   purge_plugindir: false        # if true, all non salt-managed files in plugindir will be removed
+  enable_service: true          # if false, service is not enabled and not started
   plugins:
     default: [battery, cpu, entropy, load, memory, swap, users]
     curl_json:
