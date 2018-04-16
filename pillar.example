@@ -1,6 +1,8 @@
 collectd:
   FQDNLookup: true
-  TypesDB: ['/usr/share/collectd/types.db']
+  # To add new types to collectd, you need to reference the new file in TypesDB
+  TypesDB: ['/usr/share/collectd/types.db', '/etc/collectd/plugins/types.db']
+  # and add types below
   types:
     - 'jmx_memory  value:GAUGE:0:U'
   purge_plugindir: false        # if true, all non salt-managed files in plugindir will be removed

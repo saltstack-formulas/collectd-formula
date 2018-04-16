@@ -180,6 +180,11 @@ Enables and configures the syslog plugin.
 
 Enables and configures the tail plugin.
 
+``collectd.types``
+-------------------
+
+Manages a TypesDB file stored at `plugindirconfig`/types.db.
+
 ``collectd.curl_json``
 -------------------
 
