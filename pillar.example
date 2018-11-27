@@ -185,8 +185,11 @@ collectd:
       storerates: true
       alwaysappendds: false
     processes:
-      - java
-      - python
+      Processes: 
+        - 'java'
+        - 'python'
+      ProcessMatches:
+        - '.*java.*'
     statsd:
       host: localhost
       port: 8125
