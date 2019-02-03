@@ -3,17 +3,12 @@
 include:
   - collectd
 
-{{ collectd_settings.plugins.ping.pkg.name }}:
-  pkg.installed
-
-{{ collectd_settings.plugindirconfig }}/ping.conf:
+{{ collectd_settings.plugindirconfig }}/write_http.conf:
   file.managed:
-    - source: salt://collectd/files/ping.conf
+    - source: salt://collectd/files/write_http.conf
     - user: {{ collectd_settings.user }}
     - group: {{ collectd_settings.group }}
     - mode: 644
     - template: jinja
-    - require:
-      - pkg: {{ collectd_settings.plugins.ping.pkg.name }}
     - watch_in:
       - service: collectd-service

@@ -133,6 +133,9 @@
                 'port': '11211',
             },
             'ping': {
+                'pkg': {
+                  'name': 'liboping0'
+                },
                 'hosts': ['google.com', 'yahoo.com'],
                 'hosts_from_grains': {},
             },
@@ -154,6 +157,12 @@
                 'host': '"::"',
                 'port': 8125
             },
+            'swap': {
+                'ValuesAbsolute': 'true',
+                'ValuesPercentage': 'false',
+                'ReportByDevice': 'false',
+                'ReportBytes': 'false'
+            },
             'syslog': {
                 'loglevel': 'info'
             },
@@ -162,6 +171,10 @@
                 'port': 2003,
                 'prefix': 'collectd.',
                 'postfix': ''
+            },
+            'write_http': {
+                'host': salt['grains.get']('fqdn'),
+                'port': 80,
             },
             'write_riemann': {
                 'host': salt['grains.get']('fqdn'),
@@ -194,7 +207,8 @@
             'tcpconns': {
               'listening_ports': 'true',
               'local_ports': [],
-              'remote_ports': []
+              'remote_ports': [],
+              'all_ports_summary': 'false'
             },
             'unixsock': {
               'socket_file': '/var/run/collectd.socket',
