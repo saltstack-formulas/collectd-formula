@@ -180,6 +180,11 @@ Enables and configures the syslog plugin.
 
 Enables and configures the tail plugin.
 
+``collectd.tcpconns``
+-------------------
+
+Enables and configures the tcpconns plugin.
+
 ``collectd.types``
 -------------------
 
