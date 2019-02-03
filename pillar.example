@@ -226,6 +226,7 @@ collectd:
         ReportByCpu: false
     tcpconns:
       listening_ports: 'true'
+      all_ports_summary: 'false'
       local_ports: []
       remote_ports: []
     openvpn:
