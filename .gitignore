@@ -1,0 +1,14 @@
+*.egg
+*.egg-info/
+*.py[cod]
+.*.sw?
+.env
+.pytest_cache/
+.venv/
+/.idea/
+__pycache__/
+Dockerfile.*_*
+ignore/
+tmp/
+.kitchen/
+Gemfile.lock
