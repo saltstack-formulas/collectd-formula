@@ -4,7 +4,7 @@ config = '/etc/collectd/collectd.conf'
 
 # Override by OS
 case os[:name]
-when 'redhat', 'fedora', 'centos'
+when 'redhat', 'fedora', 'centos', 'opensuse'
   config = '/etc/collectd.conf'
 when 'freebsd'
   config = '/usr/local/etc/collectd.conf'

@@ -4,7 +4,7 @@ pkg = 'collectd-core'
 
 # Override by OS
 case os[:name]
-when 'redhat', 'centos', 'fedora'
+when 'redhat', 'centos', 'fedora', 'opensuse'
   pkg = 'collectd'
 when 'freebsd'
   pkg = 'collectd5'
