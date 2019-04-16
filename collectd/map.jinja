@@ -30,6 +30,16 @@
         'user': 'root',
         'group': 'wheel',
     },
+    'Suse': {
+        'config': '/etc/collectd.conf',
+        'pkg': 'collectd',
+        'plugindirconfig': '/etc/collectd.d',
+        'service': 'collectd',
+        'TypesDB': ['/usr/share/collectd/types.db'],
+        'moduledirconfig': '/usr/share/collectd/modules',
+        'user': 'root',
+        'group': 'root',
+    },
 }, merge=salt['pillar.get']('collectd:lookup')) %}
 
 {# Settings dictionary with default values #}
