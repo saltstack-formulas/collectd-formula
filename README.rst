@@ -101,6 +101,7 @@ Pillar values used under `collectd.plugins.java`, an example ::
           port: 39999
           user: 'someuser' (optional)
           group: 'someuser' (optional)
+          prefix: 'someprefix-' (optional)
           lib: '/some/file' (optional)
           tomcat: true (optional)
 
@@ -144,6 +145,11 @@ Enables and configures the ntpd plugin.
 ---------------------
 
 This state is used to install OS packages collectd plugins depend on.
+
+``collectd.perl``
+-----------------------
+
+Enables and configures the perl plugin.
 
 ``collectd.postgresql``
 -----------------------
