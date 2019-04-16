@@ -173,6 +173,9 @@
                 'prefix': 'collectd.',
                 'postfix': ''
             },
+            'write_prometheus': {
+                'port': 9103
+            },
             'write_riemann': {
                 'host': salt['grains.get']('fqdn'),
                 'port': 5555,
