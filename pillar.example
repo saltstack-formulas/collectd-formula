@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+# vim: ft=yaml
+---
 collectd:
   FQDNLookup: true
   # To add new types to collectd, you need to reference the new file in TypesDB
@@ -5,8 +8,10 @@ collectd:
   # and add types below
   types:
     - 'jmx_memory  value:GAUGE:0:U'
-  purge_plugindir: false        # if true, all non salt-managed files in plugindir will be removed
-  enable_service: true          # if false, service is not enabled and not started
+  # if true, all non salt-managed files in plugindir will be removed
+  purge_plugindir: false
+  # if false, service is not enabled and not started
+  enable_service: true
   plugins:
     default: [battery, cpu, entropy, load, memory, swap, users]
     curl_json:
@@ -71,7 +76,10 @@ collectd:
     dbi:
       queries:
         - name: mysql_user_connections
-          statement: SELECT user, count(*) as nof_connections FROM information_schema.processlist GROUP BY user
+          statement: >-
+            SELECT user, count(*) as nof_connections
+            FROM information_schema.processlist
+            GROUP BY user
           results:
             - type: gauge
               instancePrefix: mysql_user_connections
@@ -84,7 +92,9 @@ collectd:
             - mysql_user_connections
           driverOptions:
             - name: host
-              value: {{ salt['grains.get']('ip4_interfaces:eth1')[0] }}
+              value: 192.168.1.100
+              # Another method is to use `grains.get`:
+              # value: {{ salt['grains.get']('ip4_interfaces:eth1')[0] }}
             - name: username
               value: user
             - name: password
@@ -124,7 +134,7 @@ collectd:
     powerdns:
       socket: '/var/run/pdns.controlsocket'
     protocols:
-      IgnoreSelected: True
+      IgnoreSelected: true
     openldap:
       instances:
         - name: ldap
@@ -164,12 +174,12 @@ collectd:
     # defaults as of 20141103
     ping:
       hosts: ['google.com', 'yahoo.com']
-      #interval: 1.0
-      #timeout: 0.9
-      #ttl: 64
-      #sourceaddress: 10.0.1.1
-      #device: eth0
-      #maxmissed: -1
+      # interval: 1.0
+      # timeout: 0.9
+      # ttl: 64
+      # sourceaddress: 10.0.1.1
+      # device: eth0
+      # maxmissed: -1
     disk:
       matches: ['/^[hs]d[a-f][0-9]?$/']
     write_graphite:
@@ -185,7 +195,7 @@ collectd:
       storerates: true
       alwaysappendds: false
     processes:
-      Processes: 
+      Processes:
         - 'java'
         - 'python'
       ProcessMatches:
@@ -217,7 +227,7 @@ collectd:
       LogTraces: true
       Interactive: false
       modules:
-        module_name: # Replace module_name by your Python module
+        module_name:  # Replace module_name by your Python module
           variables:
             var1: value1
             var2: value2
