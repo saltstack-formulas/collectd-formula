@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/saltstack-formulas/collectd-formula/compare/v1.1.0...v1.1.1) (2019-08-23)
+
+
+### Bug Fixes
+
+* change iteritems to items to be Py3 compatible ([e7cc023](https://github.com/saltstack-formulas/collectd-formula/commit/e7cc023))
+
 # [1.1.0](https://github.com/saltstack-formulas/collectd-formula/compare/v1.0.1...v1.1.0) (2019-08-10)
 
 
