@@ -3,7 +3,7 @@
 include:
   - collectd
 
-{%- for plugin, plugin_settings in collectd_settings.plugins.extra.iteritems() %}
+{%- for plugin, plugin_settings in collectd_settings.plugins.extra.items() %}
 {{ collectd_settings.plugindirconfig }}/{{ plugin }}.conf:
   file.managed:
     - source: salt://collectd/files/extra.conf
