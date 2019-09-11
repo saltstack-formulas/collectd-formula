@@ -154,8 +154,8 @@ collectd:
         - 'ext4'
         - 'tmpfs'
       IgnoreSelected: false
-      ReportByDevice:
-      ReportInodes:
+      ReportByDevice: false
+      ReportInodes: false
     ntpd:
       host: localhost
       port: 123
