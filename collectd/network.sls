@@ -13,7 +13,9 @@ include:
     - watch_in:
       - service: collectd-service
 
-{% if collectd_settings.plugins.network.authfile is defined and collectd_settings.plugins.network.username is defined and collectd_settings.plugins.network.type == 'Listen' %}
+{% if collectd_settings.plugins.network.authfile is defined and
+      collectd_settings.plugins.network.username is defined and
+      collectd_settings.plugins.network.type == 'Listen' %}
 {{ collectd_settings.plugins.network.authfile }}:
   file.managed:
     - user: {{ collectd_settings.user }}
