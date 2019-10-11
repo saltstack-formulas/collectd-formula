@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.1.3](https://github.com/saltstack-formulas/collectd-formula/compare/v1.1.2...v1.1.3) (2019-10-11)
+
+
+### Bug Fixes
+
+* **rubocop:** add fixes using `rubocop --safe-auto-correct` ([](https://github.com/saltstack-formulas/collectd-formula/commit/9eba083))
+
+
+### Continuous Integration
+
+* merge travis matrix, add `salt-lint` & `rubocop` to `lint` job ([](https://github.com/saltstack-formulas/collectd-formula/commit/f8e5542))
+* **travis:** merge `rubocop` linter into main `lint` job ([](https://github.com/saltstack-formulas/collectd-formula/commit/a95ec51))
+
 ## [1.1.2](https://github.com/saltstack-formulas/collectd-formula/compare/v1.1.1...v1.1.2) (2019-10-09)
 
 
