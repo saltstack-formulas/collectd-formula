@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Set defaults, use debian as base
 
 pkg = 'collectd-core'
@@ -9,7 +11,6 @@ when 'redhat', 'centos', 'fedora', 'opensuse'
 when 'freebsd'
   pkg = 'collectd5'
 end
-
 
 control 'Collectd package' do
   title 'should be installed'

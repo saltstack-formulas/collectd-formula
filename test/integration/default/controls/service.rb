@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 control 'Collectd service' do
   title 'should be running and enabled'
 

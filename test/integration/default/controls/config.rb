@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Set defaults, use debian as base
 
 config = '/etc/collectd/collectd.conf'
@@ -20,4 +22,3 @@ control 'Collectd configuration' do
     its('mode') { should cmp '0644' }
   end
 end
-
