@@ -312,6 +312,7 @@ suites:
       state_top:
         base:
           '*':
+            - collectd._mapdata
             - collectd
       pillars:
         top.sls:
