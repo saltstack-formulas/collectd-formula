@@ -1,5 +1,3 @@
-.. _readme:
-
 collectd-formula
 ================
 
@@ -143,12 +141,12 @@ Pillar values used under `collectd.plugins.java`, an example ::
 
 
 ``collectd.logfile``
-^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
 
 Enables and configures the logfile plugin.
 
 ``collectd.modules``
-^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
 
 This state helps distributing collectd external modules written in various languages
 (see [python](https://collectd.org/wiki/index.php/Plugin:Python) or
@@ -163,12 +161,12 @@ Sample usage:
 
 
 ``collectd.mysql``
-^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^
 
 Enables and configures the mysql plugin. Needs refinement.
 
 ``collectd.network``
-^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
 
 Enables and configures the network plugin.
 
@@ -178,32 +176,32 @@ Enables and configures the network plugin.
 Enables and configures the ntpd plugin.
 
 ``collectd.packages``
-^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
 
 This state is used to install OS packages collectd plugins depend on.
 
 ``collectd.postgresql``
-^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
 
 Enables and configures the postgresql plugin. Needs refinement.
 
 ``collectd.processes``
-^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^
 
 Enables and configures the processes plugin
 
 ``collectd.protocols``
-^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^
 
 Enables and configures the protocols plugin
 
 ``collectd.powerdns``
-^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
 
 Enables and configures the powerdns plugin.
 
 ``collectd.redis``
-^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^
 
 Enables and configures the redis plugin.
 
@@ -213,27 +211,27 @@ Enables and configures the redis plugin.
 Enables and configures the syslog plugin.
 
 ``collectd.tail``
-^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^
 
 Enables and configures the tail plugin.
 
 ``collectd.tcpconns``
-^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
 
 Enables and configures the tcpconns plugin.
 
 ``collectd.types``
-^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^
 
 Manages a TypesDB file stored at `plugindirconfig`/types.db.
 
 ``collectd.curl_json``
-^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^
 
 Enables and configures the curl_json plugin.
 
 ``collectd.curl_xml``
-^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
 
 Enables and configures the curl_xml plugin.
 
@@ -243,30 +241,30 @@ Enables and configures the curl_xml plugin.
 Enables and configures the python plugin, which allows executiong arbitrary python scripts.
 
 ``collectd.vmem``
-^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^
 
 Enables and configures the vmem plugin.
 
 ``collectd.librato``
-^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
 
 Enables and configures write_http plugin for reporting to Librato
 
 ``collectd.zookeeper``
-^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^
 
 Enables and configures the zookeeper plugin.
 
 ``collectd.unixsock``
-^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
 
 Enables and configures the unixsock plugin.
 
 Usage
-=====
+-----
 
 Custom state file
------------------
+^^^^^^^^^^^^^^^^^
 
 Create a custom state file (for example ``collectd-custom.sls``) that includes the plugins you want and the base state. ::
 
@@ -281,7 +279,7 @@ Then in your topfile: ::
       - collectd-custom
 
 Directly in topfile
--------------------
+^^^^^^^^^^^^^^^^^^^
 
 Or if you don't mind having long lists in your topfile, just add whatever plugins you want and the base state. ::
 
@@ -291,7 +289,7 @@ Or if you don't mind having long lists in your topfile, just add whatever plugin
       - collectd.syslog
 
 Combined
---------
+^^^^^^^^
 
 Or you can combine both - default plugins in custom state and specific in topfile. ::
 
