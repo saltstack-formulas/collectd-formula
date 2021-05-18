@@ -149,8 +149,8 @@ Enables and configures the logfile plugin.
 ^^^^^^^^^^^^^^^^^^^^
 
 This state helps distributing collectd external modules written in various languages
-(see [python](https://collectd.org/wiki/index.php/Plugin:Python) or
-[perl](https://collectd.org/wiki/index.php/Plugin:Perl) for example).
+(see `python <https://collectd.org/wiki/index.php/Plugin:Python>`_ or
+`perl <https://collectd.org/wiki/index.php/Plugin:Perl>`_ for example).
 
 Sample usage:
 
