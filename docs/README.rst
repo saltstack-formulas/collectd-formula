@@ -63,7 +63,7 @@ Metastate used to include service into respective plugin states, included in ``c
 ``collectd.apache``
 ^^^^^^^^^^^^^^^^^^^
 
-Enables and configures the [apache](https://collectd.org/wiki/index.php/Plugin:Apache) plugin.
+Enables and configures the `apache plugin <https://collectd.org/wiki/index.php/Plugin:Apache>`_.
 All common parameters are supported, so pass something like ::
 
     apache:
