@@ -4,11 +4,11 @@
 
 config = '/etc/collectd/collectd.conf'
 
-# Override by OS
-case os[:name]
-when 'redhat', 'fedora', 'centos', 'opensuse', 'oracle'
+# Override by platform
+case platform[:family]
+when 'redhat', 'fedora', 'suse'
   config = '/etc/collectd.conf'
-when 'freebsd'
+when 'bsd'
   config = '/usr/local/etc/collectd.conf'
 end
 
