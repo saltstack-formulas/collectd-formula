@@ -131,6 +131,20 @@ collectd:
           user: 'myuser'
           pass: 'mypass'
           name: 'mydb'
+          interval: '3600'
+      queries:
+        - name: 'imsi_percent_hourly'
+          statement: 'SELECT NIANIA'
+          result_type: 'gauge'
+          instanceprefix: 'imsi_stats'
+          instancefrom: 'probe_id'
+          valuefrom: 'ottwithimsi'
+        - name: 'ott_hourly'
+          statement: 'SELECT NIONIO'
+          result_type: 'gauge'
+          instanceprefix: 'hourly_ott'
+          instancefrom: 'probe_id'
+          valuefrom: 'ott'
     powerdns:
       socket: '/var/run/pdns.controlsocket'
     protocols:
