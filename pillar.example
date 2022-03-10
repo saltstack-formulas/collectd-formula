@@ -133,18 +133,12 @@ collectd:
           name: 'mydb'
           interval: '3600'
       queries:
-        - name: 'imsi_percent_hourly'
-          statement: 'SELECT NIANIA'
+        - name: 'name_1'
+          statement: 'REQUEST'
           result_type: 'gauge'
-          instanceprefix: 'imsi_stats'
-          instancefrom: 'probe_id'
-          valuefrom: 'ottwithimsi'
-        - name: 'ott_hourly'
-          statement: 'SELECT NIONIO'
-          result_type: 'gauge'
-          instanceprefix: 'hourly_ott'
-          instancefrom: 'probe_id'
-          valuefrom: 'ott'
+          instanceprefix: 'prefix'
+          instancefrom: 'instance'
+          valuefrom: 'from'
     powerdns:
       socket: '/var/run/pdns.controlsocket'
     protocols:
