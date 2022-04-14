@@ -140,7 +140,7 @@ collectd:
           instancefrom: 'my_query_instancefrom'
           valuefrom: 'my_query_valuefrom'
         - name: 'my_query_name_Two'
-          statement: 'my_query_statement'
+          statement: 'my_query_statement_Two'
           result_type: 'my_query_result_type'
           instanceprefix: 'my_query_instanceprefix'
           instancefrom: 'my_query_instancefrom'
