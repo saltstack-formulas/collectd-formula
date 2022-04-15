@@ -4,6 +4,10 @@
 include:
   - collectd
 
+collectd-postgresql-pkg-installed:
+  pkg.installed:
+    - name: {{ collectd_settings.plugin_postgresql.pkg }}
+
 {{ collectd_settings.plugindirconfig }}/postgresql.conf:
   file.managed:
     - source: salt://collectd/files/postgresql.conf
@@ -13,3 +17,5 @@ include:
     - template: jinja
     - watch_in:
       - service: collectd-service
+    - require:
+      - pkg: collectd-postgresql-pkg-installed

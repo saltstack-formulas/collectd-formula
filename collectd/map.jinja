@@ -9,6 +9,7 @@
         'moduledirconfig': '/usr/share/collectd/modules',
         'user': 'root',
         'group': 'root',
+        'plugin_postgresql': {'pkg': 'postgresql-client'},
     },
     'RedHat': {
         'config': '/etc/collectd.conf',
@@ -19,6 +20,7 @@
         'moduledirconfig': '/usr/share/collectd/modules',
         'user': 'root',
         'group': 'root',
+        'plugin_postgresql': {'pkg': 'collectd-postgresql'},
     },
     'FreeBSD': {
         'config': '/usr/local/etc/collectd.conf',
@@ -29,6 +31,7 @@
         'moduledirconfig': '/usr/local/share/collectd/modules',
         'user': 'root',
         'group': 'wheel',
+        'plugin_postgresql': {'pkg': 'postgresql-client'},
     },
     'Suse': {
         'config': '/etc/collectd.conf',
@@ -39,6 +42,7 @@
         'moduledirconfig': '/usr/share/collectd/modules',
         'user': 'root',
         'group': 'root',
+        'plugin_postgresql': {'pkg': 'collectd-plugin-postgresql'},
     },
 }, merge=salt['pillar.get']('collectd:lookup')) %}
 
@@ -147,7 +151,8 @@
                 'hosts_from_grains': {},
             },
             'postgresql': {
-                'databases': []
+                'databases': [],
+                'queries' : []
             },
             'powerdns': {
                 'socket': '/var/run/pdns.controlsocket'
