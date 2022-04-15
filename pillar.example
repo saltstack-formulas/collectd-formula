@@ -140,7 +140,7 @@ collectd:
           instancefrom: 'myinstancefrom'
           valuefrom: 'myvaluefrom'
         - name: 'myname_Two'
-          statement: 'mystatement'
+          statement: 'mystatement_Two'
           result_type: 'myresult_type'
           instanceprefix: 'myinstanceprefix'
           instancefrom: 'myinstancefrom'
