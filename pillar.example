@@ -131,6 +131,20 @@ collectd:
           user: 'myuser'
           pass: 'mypass'
           name: 'mydb'
+          interval: '3600'
+      queries:
+        - name: 'myname_One'
+          statement: 'mystatement'
+          result_type: 'myresult_type'
+          instanceprefix: 'myinstanceprefix'
+          instancefrom: 'myinstancefrom'
+          valuefrom: 'myvaluefrom'
+        - name: 'myname_Two'
+          statement: 'mystatement'
+          result_type: 'myresult_type'
+          instanceprefix: 'myinstanceprefix'
+          instancefrom: 'myinstancefrom'
+          valuefrom: 'myvaluefrom'
     powerdns:
       socket: '/var/run/pdns.controlsocket'
     protocols:
