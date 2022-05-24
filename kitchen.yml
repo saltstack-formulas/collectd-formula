@@ -310,13 +310,14 @@ suites:
           '*':
             - collectd._mapdata
             - collectd
+            - collectd.postgresql
       pillars:
         top.sls:
           base:
             '*':
               - collectd
       pillars_from_files:
-        collectd.sls: test/salt/default/pillar/collectd.sls
+        collectd.sls: test/salt/pillar/default/collectd.sls
     verifier:
       inspec_tests:
         - path: test/integration/default

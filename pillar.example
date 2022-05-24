@@ -126,11 +126,42 @@ collectd:
           slavenotifications: true
     postgresql:
       databases:
-        - host: 'localhost'
+        - name: 'foo'
+          host: 'hostname'
           port: '5432'
-          user: 'myuser'
-          pass: 'mypass'
-          name: 'mydb'
+          user: 'username'
+          pass: 'secret'
+          sslmode: 'prefer'
+          krbsrvname: 'kerberos_service_name'
+          service: 'service_name'
+          queries:
+            - 'magic'
+        - name: 'bar'
+          service: 'service_name'
+          queries:
+            - 'backend'
+            - 'rt36_tickets'
+      queries:
+        - name: 'magic'
+          statement: "SELECT magic FROM wizard WHERE host = $1;"
+          param: 'hostname'
+          results:
+            - type: 'gauge'
+              instanceprefix: 'magic'
+              valuesfrom: 'magic'
+        - name: 'rt36_tickets'
+          statement: |
+            SELECT COUNT(type) AS count, type
+            FROM (SELECT CASE
+                         WHEN resolved = 'epoch' THEN 'open'
+                         ELSE 'resolved' END AS type
+                         FROM tickets) type
+            GROUP BY type;
+          results:
+            - type: 'counter'
+              instanceprefix: 'rt36_tickets'
+              instancesfrom: 'type'
+              valuesfrom: 'count'
     powerdns:
       socket: '/var/run/pdns.controlsocket'
     protocols:
