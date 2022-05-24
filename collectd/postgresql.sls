@@ -4,6 +4,7 @@
 include:
   - collectd
 
+# Install the required dependency package corresponding to the OS
 collectd-postgresql-pkg-installed:
   pkg.installed:
     - name: {{ collectd_settings.plugin_postgresql.pkg }}

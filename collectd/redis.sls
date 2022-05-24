@@ -15,4 +15,3 @@ libhiredis0.13:
     - template: jinja
     - watch_in:
       - service: collectd-service
-

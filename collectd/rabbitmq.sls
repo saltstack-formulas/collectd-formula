@@ -20,4 +20,3 @@ collectd-rabbitmq-module:
     - template: jinja
     - watch_in:
       - service: collectd-service
-
