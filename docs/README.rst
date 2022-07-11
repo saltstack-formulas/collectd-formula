@@ -200,6 +200,11 @@ Enables and configures the protocols plugin
 
 Enables and configures the powerdns plugin.
 
+``collectd.rabbitmq``
+^^^^^^^^^^^^^^^^^^^^^
+
+Enables and configures the rabbitmq plugin.
+
 ``collectd.redis``
 ^^^^^^^^^^^^^^^^^^
 
