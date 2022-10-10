@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.1](https://github.com/saltstack-formulas/collectd-formula/compare/v1.2.0...v1.2.1) (2022-10-10)
+
+
+### Continuous Integration
+
+* update `pre-commit` configuration inc. for pre-commit.ci [skip ci] ([ef5dbf6](https://github.com/saltstack-formulas/collectd-formula/commit/ef5dbf60fdca9ac827667c2d51ac02dc3a3c9700))
+
+
+### Documentation
+
+* add collectd.rabbitmq to README ([dac2c30](https://github.com/saltstack-formulas/collectd-formula/commit/dac2c3014d91acd58c9cb2d4a96c6aed405a47f7))
+
 # [1.2.0](https://github.com/saltstack-formulas/collectd-formula/compare/v1.1.4...v1.2.0) (2022-05-24)
 
 
