@@ -2,6 +2,7 @@
 
 include:
   - collectd
+  - collectd.workaround-salt-ssh
 
 liboping0:
   pkg.installed
@@ -15,5 +16,6 @@ liboping0:
     - template: jinja
     - require:
       - pkg: liboping0
+      - sls: collectd.workaround-salt-ssh
     - watch_in:
       - service: collectd-service

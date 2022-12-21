@@ -2,6 +2,7 @@
 
 include:
   - collectd
+  - collectd.workaround-salt-ssh
 
 libhiredis0.13:
   pkg.installed
@@ -13,5 +14,7 @@ libhiredis0.13:
     - group: {{ collectd_settings.group }}
     - mode: 644
     - template: jinja
+    - require:
+      - sls: collectd.workaround-salt-ssh
     - watch_in:
       - service: collectd-service

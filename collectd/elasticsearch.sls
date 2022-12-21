@@ -3,6 +3,7 @@
 include:
   - collectd
   - collectd.python
+  - collectd.workaround-salt-ssh
 
 collectd-elasticsearch-module:
   pip.installed:
@@ -20,5 +21,7 @@ collectd-elasticsearch-module:
     - group: {{ collectd_settings.group }}
     - mode: 644
     - template: jinja
+    - require:
+      - sls: collectd.workaround-salt-ssh
     - watch_in:
       - service: collectd-service

@@ -2,6 +2,7 @@
 
 include:
   - collectd
+  - collectd.workaround-salt-ssh
 
 {%- for plugin, plugin_settings in collectd_settings.plugins.extra.items() %}
 {{ collectd_settings.plugindirconfig }}/{{ plugin }}.conf:
@@ -14,6 +15,8 @@ include:
     - defaults:
         plugin: {{ plugin }}
         plugin_settings: {{ plugin_settings }}
+    - require:
+      - sls: collectd.workaround-salt-ssh
     - watch_in:
       - service: collectd-service
 {% endfor %}
