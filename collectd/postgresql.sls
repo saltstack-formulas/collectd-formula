@@ -3,6 +3,7 @@
 
 include:
   - collectd
+  - collectd.workaround-salt-ssh
 
 # Install the required dependency package corresponding to the OS
 collectd-postgresql-pkg-installed:
@@ -20,3 +21,4 @@ collectd-postgresql-pkg-installed:
       - service: collectd-service
     - require:
       - pkg: collectd-postgresql-pkg-installed
+      - sls: collectd.workaround-salt-ssh

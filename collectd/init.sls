@@ -2,6 +2,7 @@
 
 include:
   - collectd.service
+  - collectd.workaround-salt-ssh
 
 collectd:
   pkg.installed:
@@ -28,6 +29,8 @@ collectd:
     - group: {{ collectd_settings.group }}
     - mode: 644
     - template: jinja
+    - require:
+      - sls: collectd.workaround-salt-ssh
     - watch_in:
       - service: collectd-service
 
@@ -38,5 +41,7 @@ collectd:
     - group: {{ collectd_settings.group }}
     - mode: 644
     - template: jinja
+    - require:
+      - sls: collectd.workaround-salt-ssh
     - watch_in:
       - service: collectd-service

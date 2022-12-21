@@ -2,6 +2,7 @@
 
 include:
   - collectd
+  - collectd.workaround-salt-ssh
 
 {{ collectd_settings.plugindirconfig }}/md.conf:
   file.managed:
@@ -10,5 +11,7 @@ include:
     - group: {{ collectd_settings.group }}
     - mode: 644
     - template: jinja
+    - require:
+      - sls: collectd.workaround-salt-ssh
     - watch_in:
       - service: collectd-service

@@ -3,6 +3,7 @@
 include:
   - collectd
   - collectd.python
+  - collectd.workaround-salt-ssh
 
 collectd-ntp-module:
   pip.installed:
@@ -19,5 +20,7 @@ collectd-ntp-module:
     - group: {{ collectd_settings.group }}
     - mode: 644
     - template: jinja
+    - require:
+      - sls: collectd.workaround-salt-ssh
     - watch_in:
       - service: collectd-service

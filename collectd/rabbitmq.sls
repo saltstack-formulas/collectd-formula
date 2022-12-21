@@ -2,6 +2,7 @@
 
 include:
   - collectd
+  - collectd.workaround-salt-ssh
 
 collectd-rabbitmq-module:
   pip.installed:
@@ -18,5 +19,7 @@ collectd-rabbitmq-module:
     - group: {{ collectd_settings.group }}
     - mode: 600
     - template: jinja
+    - require:
+      - sls: collectd.workaround-salt-ssh
     - watch_in:
       - service: collectd-service
